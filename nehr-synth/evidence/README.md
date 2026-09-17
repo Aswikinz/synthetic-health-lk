@@ -1,6 +1,8 @@
 # Validation and platform evidence — 2026-09-17
 
 These are observed results, not an assertion of deployment acceptance.
+The initial local build is recorded first; the pre-merge follow-up below records
+subsequent hosted checks and corrections.
 The implementation and package hashes are versioned in Git; the package closure
 is recorded in every saved run. Receiver compatibility remains **unconfirmed**.
 
@@ -94,8 +96,8 @@ uses QEMU on an amd64 Windows/WSL host; it is not a native-arm benchmark.
 | Docker Engine, Linux arm64/QEMU | Passed generation, actual validation, mounted-output persistence, Java cancellation and terminal startup/quit |
 | Docker Desktop on Windows/macOS | Not tested here; release manual check required |
 | Podman Machine native Windows/macOS CLI | Not tested here; local Windows client connection was stale; WSL Podman was tested directly |
-| macOS native Python/Java | Not tested locally; Python CI matrix configured, native Java not claimed |
-| GitHub CI / Codecov hosted upload / GHCR release | Configured, not executed or published in this session |
+| macOS native Python/Java | Python tests passed on the GitHub macOS runner; native Java not tested |
+| GitHub CI / Codecov hosted upload / GHCR release | See pre-merge follow-up below; GHCR has not been published |
 
 The temporary Docker test daemon used cgroupfs and a private data/socket directory;
 online containers used host networking, while offline containers used
@@ -106,7 +108,7 @@ An additional offline Podman run passed with read-only custom fixtures and
 both input/output host paths containing spaces.
 The temporary Docker daemon was stopped after verification.
 
-The CI matrix is configuration until it runs on GitHub. Desktop host startup,
+The hosted Python matrix exercises the CLI/TUI in test mode. Desktop host startup,
 resize, cancellation and output persistence remain explicit release checks;
 neither a Python matrix nor an emulated Linux test proves those combinations.
 
@@ -130,3 +132,28 @@ missing outpatient simulator and made output-folder errors visible in the TUI.
 Regression checks brought the local Windows suite to **60 passed**, **90.91%**
 branch-inclusive coverage. Package licensing now follows the MIT license on main.
 Final hosted results are available in the repository's GitHub Actions history.
+
+Hosted Docker testing exposed runner/image UID differences, while Podman also
+needed explicit namespace mapping. The harness and documented commands now
+preserve the host owner's access without making output world-writable. The PTY
+harness now specifies a 100-by-40 terminal instead of relying on a zero-sized PTY.
+Captured PTY output then exposed Podman's interactive short-name registry prompt.
+The workflow and examples use explicit `localhost/` image names, and terminal
+startup runs before generation so startup problems fail quickly.
+
+The [hosted run after the harness fixes](https://github.com/Aswikinz/synthetic-health-lk/actions/runs/35202072722)
+passed 60 Python tests on Windows, macOS and Ubuntu. Ubuntu measured **90.91%**
+branch-inclusive coverage. The four real Java tests passed in **180.56 seconds**,
+and the complete Docker/rootless Podman amd64 smoke checks passed.
+Codecov authenticated through OIDC, but rejected the upload with **Repository not
+found**: the owner still needs to enable this repository in Codecov. The upload
+failure remains visible in CI; it has not been silently ignored.
+
+The [final native-runner check](https://github.com/Aswikinz/synthetic-health-lk/actions/runs/35204010306)
+passed the complete Docker and rootless Podman smoke tests on **native amd64 and
+arm64**, including terminal startup/quit, generation, actual validation, mounted
+output persistence and Java cancellation. Python and Java tests passed again;
+the only failed step was the unregistered Codecov repository upload. Routine CI
+now uses `ubuntu-24.04-arm` for arm64 instead of emulation. The earlier slow hosted
+QEMU run was cancelled after native verification; no completed result is claimed
+for that hosted emulation run. The initial local QEMU results above still apply.
