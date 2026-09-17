@@ -9,7 +9,7 @@ RUN .venv/bin/python scripts/install_java.py /opt/java \
 FROM python:3.12.14-slim-bookworm@sha256:782412e85d0f0984994c290652577d4018aff08145c85b262bb63dc0c7522254
 LABEL org.opencontainers.image.title="nehr-synth" \
       org.opencontainers.image.source="https://github.com/Aswikinz/synthetic-health-lk" \
-      org.opencontainers.image.licenses="GPL-3.0-or-later"
+      org.opencontainers.image.licenses="MIT"
 COPY --from=build /app/.venv /app/.venv
 COPY --from=build /opt/java /opt/java
 COPY --from=build /opt/nehr/tools /opt/nehr/tools
