@@ -270,7 +270,7 @@ includes branches and is enforced at **85%**, with no application modules exclud
 
 CI runs lightweight tests on Windows/macOS/Ubuntu, lint once, real Java tests on
 Linux, and Docker/rootless Podman smoke tests. Pull requests exercise amd64;
-main/tag runs exercise amd64 and arm64 via QEMU. Image builds and runtime tests
+main/tag runs exercise amd64 and arm64 on native runners. Image builds and runtime tests
 are distinct steps. Small failure reports are retained as artifacts.
 
 Codecov upload uses a pinned action and GitHub OIDC authentication, with
