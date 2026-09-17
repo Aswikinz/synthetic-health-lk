@@ -68,8 +68,13 @@ def tool(config: Config, name: str) -> Path:
 def run_process(args: list[str], log: Path, control: Control, *, cwd=None, timeout=900) -> int:
     control.check()
     with log.open("w", encoding="utf-8") as stream:
-        process = subprocess.Popen(args, stdout=stream, stderr=subprocess.STDOUT, cwd=cwd,
-                                   start_new_session=os.name != "nt")
+        process = subprocess.Popen(
+            args,
+            stdout=stream,
+            stderr=subprocess.STDOUT,
+            cwd=cwd,
+            start_new_session=os.name != "nt",
+        )
         started = time.monotonic()
         try:
             while process.poll() is None:
@@ -93,8 +98,9 @@ def setup(config: Config, progress=print):
     destination.mkdir(parents=True, exist_ok=True)
     lock = read_json(Path(config.ig_lock))
     artifacts = [dict(p, name=f"{p['id']}-{p['version']}.tgz") for p in lock["packages"]]
-    artifacts += [a for a in read_json(bundled("tool-lock.json"))["artifacts"]
-                  if a["name"].endswith(".jar")]
+    artifacts += [
+        a for a in read_json(bundled("tool-lock.json"))["artifacts"] if a["name"].endswith(".jar")
+    ]
     for artifact in artifacts:
         path = destination / artifact["name"]
         if not path.exists():
@@ -112,7 +118,7 @@ def setup(config: Config, progress=print):
 def prepare_packages(config: Config) -> Path:
     """Alias dev to byte-identical reviewed packages without editing definitions."""
     tools = Path(config.tools)
-    home = tools / "home"
+    home = Path(os.environ.get("NEHR_CACHE", str(tools))) / "home"
     cache = home / ".fhir" / "packages"
     cache.mkdir(parents=True, exist_ok=True)
     lock = read_json(Path(config.ig_lock))
@@ -130,6 +136,13 @@ def prepare_packages(config: Config) -> Path:
             with tarfile.open(archive) as stream:
                 stream.extractall(target, filter="data")
             marker.write_text(package["sha256"])
+    bootstrap = tools / "bootstrap"
+    bootstrap.mkdir(exist_ok=True)
+    for alias, package in lock["bootstrap_resolution"].items():
+        source = tools / (package + ".tgz")
+        target = bootstrap / alias
+        if not target.exists() or digest(target) != digest(source):
+            shutil.copyfile(source, target)
     return home
 
 
@@ -137,9 +150,12 @@ def doctor(config: Config) -> dict:
     from .localize import fixtures
 
     findings = {}
-    checks = {"fixtures": lambda: fixtures(config), "java": lambda: java(config),
-              "validator": lambda: tool(config, "validator.jar"),
-              "definitions": lambda: prepare_packages(config)}
+    checks = {
+        "fixtures": lambda: fixtures(config),
+        "java": lambda: java(config),
+        "validator": lambda: tool(config, "validator.jar"),
+        "definitions": lambda: prepare_packages(config),
+    }
     if config.preset == "outpatient":
         checks["synthea"] = lambda: tool(config, "synthea.jar")
     for name, check in checks.items():

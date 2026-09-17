@@ -1,0 +1,182 @@
+[
+  {
+    "package": "hl7.fhir.r4.core",
+    "version": "4.0.1",
+    "file": "package/ValueSet-icd-10.json",
+    "sha256": "f603977569fbe0a53b5f628b48fefd74af9ea028a375da677d6aa9764fc35c98",
+    "definition": {
+      "resourceType": "ValueSet",
+      "id": "icd-10",
+      "meta": {
+        "lastUpdated": "2019-11-01T09:29:23.356+11:00",
+        "profile": [
+          "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+          "valueCode": "fm"
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+          "valueCode": "draft"
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+          "valueInteger": 1
+        }
+      ],
+      "url": "http://hl7.org/fhir/ValueSet/icd-10",
+      "identifier": [
+        {
+          "system": "urn:ietf:rfc:3986",
+          "value": "urn:oid:2.16.840.1.113883.4.642.3.531"
+        }
+      ],
+      "version": "4.0.1",
+      "name": "ICD-10Codes",
+      "title": "ICD-10 Codes",
+      "status": "draft",
+      "experimental": false,
+      "date": "2019-11-01T09:29:23+11:00",
+      "publisher": "Financial Management",
+      "contact": [
+        {
+          "telecom": [
+            {
+              "system": "url",
+              "value": "http://hl7.org/fhir"
+            }
+          ]
+        }
+      ],
+      "description": "This value set includes sample ICD-10 codes.",
+      "copyright": "This is an example set.",
+      "compose": {
+        "include": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10",
+            "concept": [
+              {
+                "code": "123456",
+                "display": "DIAG-1"
+              },
+              {
+                "code": "123457",
+                "display": "DIAG-1a"
+              },
+              {
+                "code": "987654",
+                "display": "DIAG-2"
+              },
+              {
+                "code": "123987",
+                "display": "DIAG-3"
+              },
+              {
+                "code": "112233",
+                "display": "DIAG-4"
+              },
+              {
+                "code": "997755",
+                "display": "DIAG-5"
+              },
+              {
+                "code": "321789",
+                "display": "DIAG-6"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "package": "hl7.fhir.r5.core",
+    "version": "5.0.0",
+    "file": "package/ValueSet-icd-10.json",
+    "sha256": "a9c793cf81f80ebd72cf67f4bfd59b47fdedd52ac9b4558d5f64624906ad8ade",
+    "definition": {
+      "resourceType": "ValueSet",
+      "id": "icd-10",
+      "meta": {
+        "lastUpdated": "2023-03-26T15:21:02.749+11:00",
+        "profile": [
+          "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n            <ul>\n              <li>Include all codes defined in \n                <a href=\"http://terminology.hl7.org/5.1.0/CodeSystem-icd10.html\">\n                  <code>http://hl7.org/fhir/sid/icd-10</code>\n                </a>\n              </li>\n            </ul>\n          </div>"
+      },
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+          "valueCode": "fm"
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+          "valueCode": "draft"
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+          "valueInteger": 1
+        }
+      ],
+      "url": "http://hl7.org/fhir/ValueSet/icd-10",
+      "identifier": [
+        {
+          "system": "urn:ietf:rfc:3986",
+          "value": "urn:oid:2.16.840.1.113883.4.642.3.531"
+        },
+        {
+          "use": "old",
+          "system": "urn:ietf:rfc:3986",
+          "value": "urn:oid:2.16.840.1.113883.4.642.3.523"
+        },
+        {
+          "use": "old",
+          "system": "urn:ietf:rfc:3986",
+          "value": "urn:oid:2.16.840.1.113883.4.642.2.308"
+        }
+      ],
+      "version": "5.0.0",
+      "name": "ICD10Codes",
+      "title": "ICD-10 Codes",
+      "status": "draft",
+      "experimental": true,
+      "publisher": "Financial Management",
+      "contact": [
+        {
+          "telecom": [
+            {
+              "system": "url",
+              "value": "http://hl7.org/fhir"
+            }
+          ]
+        }
+      ],
+      "description": "This value set includes sample ICD-10 codes.",
+      "jurisdiction": [
+        {
+          "coding": [
+            {
+              "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+              "code": "001",
+              "display": "World"
+            }
+          ]
+        }
+      ],
+      "copyright": "This is an example set.",
+      "compose": {
+        "include": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10"
+          }
+        ]
+      }
+    }
+  }
+]

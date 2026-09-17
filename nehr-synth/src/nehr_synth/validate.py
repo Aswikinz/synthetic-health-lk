@@ -1,12 +1,23 @@
 """Application graph checks plus the actual HL7 validator; no FHIRPath reimplementation."""
 
+import os
+import re
 from collections import Counter
-from datetime import date
+from datetime import UTC, date, datetime
 from pathlib import Path
 
 from .config import Config
 from .localize import GN, SYSTEMS, valid_phn
-from .runtime import Control, java, prepare_packages, read_json, run_process, tool, write_json
+from .runtime import (
+    Control,
+    digest,
+    java,
+    prepare_packages,
+    read_json,
+    run_process,
+    tool,
+    write_json,
+)
 
 
 def references(value, path=""):
@@ -25,8 +36,15 @@ def application_checks(resources: list, config: Config, assignments: dict) -> li
     issues = []
 
     def error(resource, path, message):
-        issues.append({"layer": "application", "severity": "error", "resource": resource,
-                       "path": path, "message": message})
+        issues.append(
+            {
+                "layer": "application",
+                "severity": "error",
+                "resource": resource,
+                "path": path,
+                "message": message,
+            }
+        )
 
     ids = [r["resourceType"] + "/" + r["id"] for r in resources]
     known = set(ids)
@@ -48,8 +66,16 @@ def application_checks(resources: list, config: Config, assignments: dict) -> li
         if subject in known:
             patient = next((p for p in patients if f"Patient/{p['id']}" == subject), None)
             instant = resource.get("effectiveDateTime") or period.get("start")
-            if patient and instant and not patient["birthDate"] <= instant[:10] <= config.reference_date:
-                error(rid, "period/effectiveDateTime", "Clinical date outside patient lifetime/reference date")
+            if (
+                patient
+                and instant
+                and not patient["birthDate"] <= instant[:10] <= config.reference_date
+            ):
+                error(
+                    rid,
+                    "period/effectiveDateTime",
+                    "Clinical date outside patient lifetime/reference date",
+                )
     for patient in patients:
         rid = "Patient/" + patient["id"]
         values = patient.get("identifier", [])
@@ -71,12 +97,18 @@ def application_checks(resources: list, config: Config, assignments: dict) -> li
             identifiers.add((system, value))
             if system == SYSTEMS["phn"] and not valid_phn(value, config.phn_prefix):
                 error(rid, "identifier.phn", "PHN convention/checksum mismatch")
-            if system == SYSTEMS["nic"] and (len(value) != 12 or not value.isascii() or not value.isdigit()):
+            if system == SYSTEMS["nic"] and (
+                len(value) != 12 or not value.isascii() or not value.isdigit()
+            ):
                 error(rid, "identifier.nic", "Structural NIC must have 12 ASCII digits")
         try:
             dob = date.fromisoformat(patient["birthDate"])
             reference = date.fromisoformat(config.reference_date)
-            age = reference.year - dob.year - ((reference.month, reference.day) < (dob.month, dob.day))
+            age = (
+                reference.year
+                - dob.year
+                - ((reference.month, reference.day) < (dob.month, dob.day))
+            )
             if not config.age_min <= age <= config.age_max:
                 error(rid, "birthDate", "DOB outside configured age range")
         except (KeyError, ValueError):
@@ -86,7 +118,11 @@ def application_checks(resources: list, config: Config, assignments: dict) -> li
             error(rid, "address", "Missing geography provenance")
         else:
             address = patient.get("address", [{}])[0]
-            for key, source in [("city", "ds_division"), ("district", "district"), ("state", "province")]:
+            for key, source in [
+                ("city", "ds_division"),
+                ("district", "district"),
+                ("state", "province"),
+            ]:
                 if key in address and address[key] != row[source]:
                     error(rid, "address." + key, "Geography hierarchy mismatch")
             codes = [e.get("valueCode") for e in address.get("extension", []) if e.get("url") == GN]
@@ -99,68 +135,159 @@ def application_checks(resources: list, config: Config, assignments: dict) -> li
 
 def outcome_issues(outcome: dict) -> list:
     if outcome.get("resourceType") == "Bundle":
-        return [issue for entry in outcome.get("entry", [])
-                for issue in outcome_issues(entry.get("resource", {}))]
+        return [
+            issue
+            for entry in outcome.get("entry", [])
+            for issue in outcome_issues(entry.get("resource", {}))
+        ]
     if outcome.get("resourceType") != "OperationOutcome":
         raise ValueError("Validator did not return an OperationOutcome")
-    return [{"layer": "ig", "severity": item["severity"],
-             "resource": "graph", "path": ", ".join(item.get("expression", item.get("location", []))),
-             "message": item.get("diagnostics") or item.get("details", {}).get("text", ""),
-             "code": item.get("code", "")}
-            for item in outcome.get("issue", [])]
+    return [
+        {
+            "layer": "ig",
+            "severity": item["severity"],
+            "resource": "graph",
+            "path": ", ".join(item.get("expression", item.get("location", []))),
+            "message": item.get("diagnostics") or item.get("details", {}).get("text", ""),
+            "code": item.get("code", ""),
+        }
+        for item in outcome.get("issue", [])
+    ]
 
 
-def validate_graph(resources: list, assignments: dict, config: Config, directory: Path,
-                   control: Control) -> dict:
+def validate_graph(
+    resources: list, assignments: dict, config: Config, directory: Path, control: Control
+) -> dict:
     issues = application_checks(resources, config, assignments)
-    result = {"application": "failed" if issues else "passed", "ig": "not checked",
-              "identifier_format": {"phn": "passed" if config.phn else "not checked",
-                                    "nic": "incomplete" if config.nic else "not checked",
-                                    "passport": "synthetic convention" if config.passport else "not checked"},
-              "registry_validity": "not checked", "terminology_mode": config.terminology,
-              "terminology_endpoint": config.terminology_url if config.terminology == "online" else None,
-              "server_version": "not reported", "issues": issues}
+    result = {
+        "application": "failed" if issues else "passed",
+        "ig": "not checked",
+        "identifier_format": {
+            "phn": "passed" if config.phn else "not checked",
+            "nic": "incomplete" if config.nic else "not checked",
+            "passport": "synthetic convention" if config.passport else "not checked",
+        },
+        "registry_validity": "not checked",
+        "terminology_mode": config.terminology,
+        "terminology_endpoint": config.terminology_url if config.terminology == "online" else None,
+        "server_version": "not reported",
+        "lookup_date": datetime.now(UTC).isoformat(),
+        "issues": issues,
+    }
     if any(i["path"] == "identifier.phn" for i in issues):
         result["identifier_format"]["phn"] = "failed"
-    graph = {"resourceType": "Bundle", "type": "collection", "entry": [
-        {"fullUrl": f"https://synthetic.invalid/fhir/{r['resourceType']}/{r['id']}", "resource": r}
-        for r in resources]}
+    graph = {
+        "resourceType": "Bundle",
+        "type": "collection",
+        "entry": [
+            {
+                "fullUrl": f"https://synthetic.invalid/fhir/{r['resourceType']}/{r['id']}",
+                "resource": r,
+            }
+            for r in resources
+        ],
+    }
     write_json(directory / "validation-input.json", graph)
     try:
         home = prepare_packages(config)
-        args = [java(config), "-Xmx2g", f"-Duser.home={home}", "-jar", str(tool(config, "validator.jar")),
-                str(directory / "validation-input.json"), "-version", "4.0.1",
-                "-ig", "fhir.lk.nehr#0.1.0", "-tx", config.terminology_url
-                if config.terminology == "online" else "n/a",
-                "-txCache", str(Path(config.tools) / "tx-cache"),
-                "-txLog", str(directory / "terminology.log"),
-                "-output", str(directory / "validator-outcome.json"),
-                "-show-message-ids", "-check-references", "-disable-default-resource-fetcher"]
+        args = [
+            java(config),
+            "-Xmx2g",
+            f"-Duser.home={home}",
+            "-jar",
+            str(tool(config, "validator.jar")),
+            str(directory / "validation-input.json"),
+            "-version",
+            "4.0.1",
+            "-ig",
+            "fhir.lk.nehr#0.1.0",
+            "-tx",
+            config.terminology_url if config.terminology == "online" else "n/a",
+            "-txCache",
+            str(Path(os.environ.get("NEHR_CACHE", config.tools)) / "tx-cache"),
+            "-txLog",
+            str(directory / "terminology.log"),
+            "-output",
+            str(directory / "validator-outcome.json"),
+            "-verbose",
+            "-check-references",
+            "-disable-default-resource-fetcher",
+        ]
         if config.terminology == "offline":
             args.append("-no-http-access")
         write_json(directory / "validator-command.json", args)
-        code = run_process(args, directory / "validator.log", control)
+        code = run_process(
+            args, directory / "validator.log", control, cwd=Path(config.tools) / "bootstrap"
+        )
         parsed = outcome_issues(read_json(directory / "validator-outcome.json"))
+        log_path = directory / "validator.log"
+        if log_path.exists():
+            log_text = log_path.read_text(encoding="utf-8", errors="replace")
+            result["package_summary"] = next(
+                (line.strip() for line in log_text.splitlines() if "Package Summary:" in line),
+                "not reported",
+            )
+            allowed = {
+                f"{p['id']}#{p['version']}" for p in read_json(Path(config.ig_lock))["packages"]
+            }
+            loaded = re.findall(r"[a-z][a-z0-9.-]+#[a-z0-9.+-]+", result["package_summary"])
+            if set(loaded) - allowed:
+                raise ValueError(f"Validator loaded unlocked definitions: {set(loaded) - allowed}")
+        tx_cache = Path(os.environ.get("NEHR_CACHE", config.tools)) / "tx-cache"
+        result["cache_provenance"] = {p.name: digest(p) for p in tx_cache.glob("*") if p.is_file()}
+        tx_log = directory / "terminology.log"
+        if tx_log.exists():
+            text = tx_log.read_text(encoding="utf-8", errors="replace")
+            versions = re.findall(r'"software"\s*:\s*\{[^}]*"version"\s*:\s*"([^"\n]+)"', text)
+            if versions:
+                result["server_version"] = versions[0]
         issues.extend(parsed)
-        unavailable = ("unable to connect", "not supported", "could not be found", "not found",
-                       "unable to resolve", "unable to provide", "no terminology", "not checked",
-                       "not available", "error contacting", "unable to validate", "unknown code system")
+        unavailable = (
+            "unable to connect",
+            "not supported",
+            "could not be found",
+            "not found",
+            "unable to resolve",
+            "unable to provide",
+            "no terminology",
+            "not checked",
+            "not available",
+            "error contacting",
+            "unable to validate",
+            "unknown code system",
+        )
         gaps = any(any(word in i["message"].lower() for word in unavailable) for i in parsed)
         errors = any(i["severity"] in {"error", "fatal"} for i in parsed)
         result["ig"] = "incomplete" if gaps else "failed" if errors else "passed"
         if code != 0 and not errors:
             result["ig"] = "incomplete"
-            issues.append({"layer": "execution", "severity": "error", "resource": "graph",
-                           "path": "validator", "message": f"Validator exit code {code}"})
+            issues.append(
+                {
+                    "layer": "execution",
+                    "severity": "error",
+                    "resource": "graph",
+                    "path": "validator",
+                    "message": f"Validator exit code {code}",
+                }
+            )
     except (ValueError, OSError, TimeoutError) as error:
         result["ig"] = "incomplete"
-        issues.append({"layer": "execution", "severity": "error", "resource": "graph",
-                       "path": "validator", "message": str(error)})
-    result["status"] = ("failed" if result["application"] == "failed" or result["ig"] == "failed"
-                        else result["ig"])
+        issues.append(
+            {
+                "layer": "execution",
+                "severity": "error",
+                "resource": "graph",
+                "path": "validator",
+                "message": str(error),
+            }
+        )
+    result["status"] = (
+        "failed" if result["application"] == "failed" or result["ig"] == "failed" else result["ig"]
+    )
     write_json(directory / "validation.json", result)
     (directory / "validation.txt").write_text(
         f"IG: {result['ig']}; application: {result['application']}; receiver: unconfirmed\n"
         + "\n".join(f"{i['severity']} {i['resource']} {i['path']}: {i['message']}" for i in issues),
-        encoding="utf-8")
+        encoding="utf-8",
+    )
     return result

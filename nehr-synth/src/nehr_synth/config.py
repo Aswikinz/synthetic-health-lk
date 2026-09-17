@@ -111,5 +111,7 @@ def save(config: Config, path: Path) -> None:
     for key in PATHS:
         values[key] = str(Path(values[key]).resolve())
     # This flat schema needs only TOML strings, booleans and integers.
-    path.write_text("\n".join(f"{k} = {json.dumps(v, ensure_ascii=False)}"
-                              for k, v in values.items()) + "\n", encoding="utf-8")
+    path.write_text(
+        "\n".join(f"{k} = {json.dumps(v, ensure_ascii=False)}" for k, v in values.items()) + "\n",
+        encoding="utf-8",
+    )

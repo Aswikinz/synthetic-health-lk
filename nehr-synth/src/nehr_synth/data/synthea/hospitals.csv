@@ -1,0 +1,2 @@
+provider_num,npi,name,address,city,state,zip,fips_county,lat,lon,phone,provider_type_code,category,emergency,upin,pin,region_code,bed_count,clia_lab_number
+TEST-CLINIC,0000000000,Synthetic Screening Clinic,1 Test Lane,Colombo,Western,00100,001,6.9271,79.8612,,00-09,01-02,true,,,00,20,

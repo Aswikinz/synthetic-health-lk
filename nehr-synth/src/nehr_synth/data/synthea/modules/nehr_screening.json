@@ -1,0 +1,21 @@
+{
+  "name": "NEHR Synthetic Screening",
+  "remarks": ["Artificial test scenario, not a clinical recommendation or population model."],
+  "states": {
+    "Initial": {"type": "Initial", "direct_transition": "Wait"},
+    "Wait": {"type": "Delay", "exact": {"quantity": 18, "unit": "years"}, "direct_transition": "Visit"},
+    "Visit": {
+      "type": "Encounter", "encounter_class": "ambulatory",
+      "codes": [{"system": "SNOMED-CT", "code": "185349003", "display": "Encounter for check up (procedure)"}],
+      "direct_transition": "Glucose"
+    },
+    "Glucose": {
+      "type": "Observation", "category": "laboratory",
+      "codes": [{"system": "LOINC", "code": "2345-7", "display": "Glucose [Mass/volume] in Serum or Plasma"}],
+      "range": {"low": 80, "high": 110}, "unit": "mg/dL",
+      "direct_transition": "End"
+    },
+    "End": {"type": "EncounterEnd", "direct_transition": "Again"},
+    "Again": {"type": "Delay", "exact": {"quantity": 1, "unit": "years"}, "direct_transition": "Visit"}
+  }
+}

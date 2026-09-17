@@ -78,6 +78,26 @@
       "dependencies": {
         "hl7.fhir.r4.core": "4.0.1"
       }
+    },
+    {
+      "id": "hl7.fhir.xver-extensions",
+      "version": "0.1.0",
+      "url": "https://packages.fhir.org/hl7.fhir.xver-extensions/0.1.0",
+      "sha256": "f3bb9fa2083402e88a02b41f433655274e8a1cca563211c8f7ba6fd0badf537a",
+      "dependencies": {
+        "hl7.fhir.r4.core": "4.0.1"
+      },
+      "purpose": "Validator runtime cross-version definitions"
+    },
+    {
+      "id": "hl7.terminology.r4",
+      "version": "6.2.0",
+      "url": "https://packages.fhir.org/hl7.terminology.r4/6.2.0",
+      "sha256": "79404c9cc95491fc0155627cd039c401a6eb4748175328131e91b709a41300e2",
+      "dependencies": {
+        "hl7.fhir.r4.core": "4.0.1"
+      },
+      "purpose": "Validator bootstrap; target IG loads 6.5.0 afterwards"
     }
   ],
   "dev_resolution": {
@@ -85,5 +105,9 @@
     "fhir.lk.nehr": "0.1.0",
     "fhir.lk.providerregistry": "0.1.0",
     "fhir.lk.facilityregistry": "0.1.0"
+  },
+  "bootstrap_resolution": {
+    "hl7.terminology": "hl7.terminology.r4-6.5.0",
+    "hl7.fhir.uv.extensions": "hl7.fhir.uv.extensions.r4-5.2.0"
   }
 }
