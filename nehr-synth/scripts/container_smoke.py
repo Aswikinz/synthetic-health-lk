@@ -14,10 +14,11 @@ from uuid import uuid4
 engine, image, architecture = sys.argv[1:]
 output = Path("container-output") / engine / architecture / uuid4().hex[:8]
 output.mkdir(parents=True, exist_ok=True)
-output.chmod(0o777)
 command = [engine, "run", "--rm", "--platform", f"linux/{architecture}"]
 if engine == "podman":
     command += ["--userns=keep-id"]
+else:
+    command += ["--user", f"{os.getuid()}:{os.getgid()}"]
 mount = ["-v", f"{output.resolve()}:/data"]
 subprocess.run(
     command
