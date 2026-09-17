@@ -5,7 +5,10 @@ Sri Lankan FHIR R4 datasets. Generation and full-resource validation run locally
 online terminology checking is the default. No NEHR sender or registry client is
 included. FHIR JSON is the canonical output; spreadsheets are intentionally deferred.
 
-**Target: FHIR R4 4.0.1 · fhir.lk.nehr 0.1.0 · Client Registry 0.1.0.**
+**Target: FHIR R4 4.0.1 · Sri Lanka NEHR IG 0.1.0 · Client Registry 0.1.0.**
+The [NEHR Implementation Guide website](https://ig.hiu.lk/fhir/nehr/index.html)
+is hosted at **ig.hiu.lk**. Its package ID is `fhir.lk.nehr` (used by the HL7
+validator), and its canonical base is `http://ig.hiu.lk/fhir/nehr`.
 The exact package closure and bootstrap resolutions are in [ig-lock.json](ig-lock.json).
 These are development publications. **Receiver compatibility is unconfirmed**;
 a receiver owner must confirm accepted versions, structures, terminology and test
@@ -104,7 +107,26 @@ deliberately reference the source fixtures and developer tool cache.
 ## Native developer workflow
 
 Containers are the supported distribution. Native execution is a tested developer
-convenience on the combinations documented below. Install `uv` and Java 21, then:
+convenience on the combinations documented below. For a fresh checkout, start with
+the [repository setup instructions](../README.md#windows-setup-and-launch).
+
+On Windows, install Python 3.12 or newer and Java 21, then run these commands in
+the `nehr-synth` directory using PowerShell:
+
+```powershell
+python -m pip install uv
+python -m uv sync --frozen --python 3.12.14
+python -m uv run nehr-synth setup
+python -m uv run nehr-synth doctor
+python -m uv run nehr-synth
+```
+
+The first setup downloads the pinned public tools and IG packages. Subsequent
+launches need only `python -m uv run nehr-synth`. For a first dataset, choose
+10 patients, the Demographics preset and Offline terminology, then Generate.
+Use Inspect result to browse the saved data. Codecov is unrelated to local startup.
+
+If `uv` and Java 21 are already on PATH, the equivalent commands are:
 
 ```sh
 uv sync --frozen --python 3.12.14
