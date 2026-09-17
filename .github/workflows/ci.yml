@@ -91,13 +91,13 @@ jobs:
           context: nehr-synth
           platforms: linux/${{ matrix.platform }}
           load: true
-          tags: nehr-synth:test
+          tags: localhost/nehr-synth:test
       - name: Docker and rootless Podman runtime smoke tests
         run: |
-          python nehr-synth/scripts/container_smoke.py docker nehr-synth:test '${{ matrix.platform }}'
-          docker save nehr-synth:test -o /tmp/nehr-image.tar
+          python nehr-synth/scripts/container_smoke.py docker localhost/nehr-synth:test '${{ matrix.platform }}'
+          docker save localhost/nehr-synth:test -o /tmp/nehr-image.tar
           podman load -i /tmp/nehr-image.tar
-          python nehr-synth/scripts/container_smoke.py podman nehr-synth:test '${{ matrix.platform }}'
+          python nehr-synth/scripts/container_smoke.py podman localhost/nehr-synth:test '${{ matrix.platform }}'
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:

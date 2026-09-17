@@ -21,6 +21,45 @@ if engine == "podman":
 else:
     command += ["--user", f"{os.getuid()}:{os.getgid()}"]
 mount = ["-v", f"{output.resolve()}:/data"]
+
+# No arguments must open the application, accept a keyboard quit and restore the PTY.
+master, slave = pty.openpty()
+termios.tcsetwinsize(slave, (40, 100))
+process = subprocess.Popen(
+    command + ["-it"] + mount + [image],
+    stdin=slave,
+    stdout=slave,
+    stderr=slave,
+    env={**os.environ, "TERM": "xterm-256color"},
+)
+os.close(slave)
+captured = b""
+deadline = time.monotonic() + 30
+try:
+    while time.monotonic() < deadline and b"Receiver" not in captured:
+        if select.select([master], [], [], 1)[0]:
+            captured += os.read(master, 65536)
+        if process.poll() is not None:
+            break
+    assert b"Receiver" in captured, (
+        f"TUI failed to start: {captured[-5000:].decode(errors='replace')}"
+    )
+    os.write(master, b"\x11")  # Ctrl+Q
+    deadline = time.monotonic() + 45
+    while process.poll() is None and time.monotonic() < deadline:
+        # Drain terminal output while quitting; an unread PTY can block terminal restoration.
+        if select.select([master], [], [], 0.2)[0]:
+            try:
+                os.read(master, 65536)
+            except OSError:
+                break
+    assert process.wait(timeout=5) == 0
+finally:
+    if process.poll() is None:
+        process.terminate()
+        process.wait(timeout=10)
+    os.close(master)
+
 subprocess.run(
     command
     + mount
@@ -102,43 +141,7 @@ finally:
         process.terminate()
         process.wait(timeout=10)
 
-# No arguments must open the application, accept a keyboard quit and restore the PTY.
-master, slave = pty.openpty()
-termios.tcsetwinsize(slave, (40, 100))
-process = subprocess.Popen(
-    command + ["-it"] + mount + [image],
-    stdin=slave,
-    stdout=slave,
-    stderr=slave,
-    env={**os.environ, "TERM": "xterm-256color"},
-)
-os.close(slave)
-captured = b""
-deadline = time.monotonic() + 30
-try:
-    while time.monotonic() < deadline and b"Receiver" not in captured:
-        if select.select([master], [], [], 1)[0]:
-            captured += os.read(master, 65536)
-        if process.poll() is not None:
-            break
-    assert b"Receiver" in captured, (
-        f"TUI failed to start: {captured[-5000:].decode(errors='replace')}"
-    )
-    os.write(master, b"\x11")  # Ctrl+Q
-    deadline = time.monotonic() + 45
-    while process.poll() is None and time.monotonic() < deadline:
-        # Drain terminal output while quitting; an unread PTY can block terminal restoration.
-        if select.select([master], [], [], 0.2)[0]:
-            try:
-                os.read(master, 65536)
-            except OSError:
-                break
-    assert process.wait(timeout=5) == 0
-finally:
-    if process.poll() is None:
-        process.terminate()
-        process.wait(timeout=10)
-    os.close(master)
+
 print(
     f"{engine} linux/{architecture}: generation, validation, cancellation, "
     "persistence and TUI passed"

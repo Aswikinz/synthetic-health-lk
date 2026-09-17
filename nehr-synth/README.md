@@ -20,8 +20,8 @@ v4.0.0, HL7 Validator 6.10.4, and checksum-verified definition archives.
 Build locally from this directory:
 
 ```sh
-docker build -t nehr-synth:local .
-# Or: podman build -t nehr-synth:local .
+docker build -t localhost/nehr-synth:local .
+# Or: podman build -t localhost/nehr-synth:local .
 ```
 
 POSIX shell, including a path containing spaces:
@@ -29,9 +29,9 @@ POSIX shell, including a path containing spaces:
 ```sh
 mkdir -p "$PWD/synthetic output"
 docker run --rm -it --user "$(id -u):$(id -g)" \
-  -v "$PWD/synthetic output:/data" nehr-synth:local
+  -v "$PWD/synthetic output:/data" localhost/nehr-synth:local
 podman run --rm -it --userns=keep-id:uid=1000,gid=1000 --user=1000:1000 \
-  -v "$PWD/synthetic output:/data:Z" nehr-synth:local
+  -v "$PWD/synthetic output:/data:Z" localhost/nehr-synth:local
 ```
 
 PowerShell:
@@ -39,8 +39,8 @@ PowerShell:
 ```powershell
 New-Item -ItemType Directory -Force 'synthetic output' | Out-Null
 $outDir = (Resolve-Path 'synthetic output').Path
-docker run --rm -it --mount "type=bind,source=$outDir,target=/data" nehr-synth:local
-podman run --rm -it --userns=keep-id:uid=1000,gid=1000 --user=1000:1000 -v "${outDir}:/data" nehr-synth:local
+docker run --rm -it --mount "type=bind,source=$outDir,target=/data" localhost/nehr-synth:local
+podman run --rm -it --userns=keep-id:uid=1000,gid=1000 --user=1000:1000 -v "${outDir}:/data" localhost/nehr-synth:local
 ```
 
 The no-argument entrypoint opens the terminal app. Tab/Shift+Tab navigate fields;
@@ -54,11 +54,11 @@ saved resources and evidence without regenerating them.
 Headless examples:
 
 ```sh
-docker run --rm -v "$PWD/synthetic output:/data" nehr-synth:local \
+docker run --rm -v "$PWD/synthetic output:/data" localhost/nehr-synth:local \
   generate --patients 10 --seed 42 --output /data/runs
-podman run --rm --userns=keep-id:uid=1000,gid=1000 --user=1000:1000 -v "$PWD/synthetic output:/data:Z" nehr-synth:local \
+podman run --rm --userns=keep-id:uid=1000,gid=1000 --user=1000:1000 -v "$PWD/synthetic output:/data:Z" localhost/nehr-synth:local \
   generate --patients 1 --preset outpatient --output /data/runs
-docker run --rm --network=none -v "$PWD/synthetic output:/data" nehr-synth:local \
+docker run --rm --network=none -v "$PWD/synthetic output:/data" localhost/nehr-synth:local \
   generate --patients 10 --terminology offline --output /data/offline
 ```
 
@@ -85,14 +85,14 @@ output = "/data/runs"
 
 ```sh
 docker run --rm -v "$PWD/synthetic output:/data" \
-  -v "$PWD/test inputs:/inputs:ro" nehr-synth:local generate --config /inputs/run.toml
+  -v "$PWD/test inputs:/inputs:ro" localhost/nehr-synth:local generate --config /inputs/run.toml
 ```
 
 ```powershell
 $inputDir = (Resolve-Path 'test inputs').Path
 docker run --rm --mount "type=bind,source=$outDir,target=/data" `
   --mount "type=bind,source=$inputDir,target=/inputs,readonly" `
-  nehr-synth:local generate --config /inputs/run.toml
+  localhost/nehr-synth:local generate --config /inputs/run.toml
 ```
 
 Use the corresponding bundled fixture files from `src/nehr_synth/data/`. Real
