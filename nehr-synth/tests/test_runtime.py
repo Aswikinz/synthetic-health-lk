@@ -8,6 +8,26 @@ import pytest
 from nehr_synth.runtime import checked, digest, doctor, java, prepare_packages, setup, tool
 
 
+@pytest.mark.parametrize(("preset", "expected"), [("demographics", 0), ("outpatient", 2)])
+def test_doctor_exit_matches_selected_tools(config, monkeypatch, tmp_path, preset, expected):
+    from nehr_synth.__main__ import main
+    from nehr_synth.config import save
+
+    config.preset = preset
+    path = tmp_path / "doctor.toml"
+    save(config, path)
+    monkeypatch.setattr("nehr_synth.runtime.java", lambda c: "java")
+    monkeypatch.setattr("nehr_synth.runtime.prepare_packages", lambda c: tmp_path)
+
+    def installed(c, name):
+        if name == "synthea.jar":
+            raise ValueError("Missing pinned Synthea")
+        return tmp_path / name
+
+    monkeypatch.setattr("nehr_synth.runtime.tool", installed)
+    assert main(["doctor", "--config", str(path)]) == expected
+
+
 def test_package_setup_integrity_and_dev_alias(config, monkeypatch, tmp_path):
     import nehr_synth.runtime as module
 

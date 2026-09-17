@@ -1,9 +1,17 @@
 import asyncio
+import time
 
 from textual.widgets import Button, DataTable, Input, Static, TabbedContent, TextArea
 
 from nehr_synth.app import SynthApp
 from nehr_synth.runtime import read_json
+
+
+async def wait_until(pilot, condition):
+    deadline = time.monotonic() + 5
+    while not condition() and time.monotonic() < deadline:
+        await pilot.pause(0.05)
+    assert condition()
 
 
 async def press_button(app, pilot, name):
@@ -34,7 +42,7 @@ async def test_form_generation_inspection_export(config, fake_validator, tmp_pat
         await pilot.press("enter")
         assert '"resourceType": "Patient"' in app.query_one("#json", TextArea).text
         app.query_one("#search", Input).value = "no-such-patient"
-        await pilot.pause()
+        await wait_until(pilot, lambda: app.query_one("#patients-table", DataTable).row_count == 0)
         assert app.query_one("#patients-table", DataTable).row_count == 0
         app.query_one("#export-path", Input).value = str(tmp_path / "export")
         await press_button(app, pilot, "export")
@@ -81,3 +89,17 @@ async def test_cancel_worker_keeps_ui_responsive(config, monkeypatch, fake_valid
         assert app.query_one("#tabs", TabbedContent).active == "progress-tab"
         await press_button(app, pilot, "inspect-result")
         assert "Cancelled" in app.query_one("#json", TextArea).text
+
+
+async def test_output_folder_failure_is_visible(config, tmp_path):
+    output = tmp_path / "occupied"
+    output.write_text("existing file")
+    config.output = str(output)
+    app = SynthApp(config)
+    async with app.run_test(size=(100, 40)) as pilot:
+        await press_button(app, pilot, "generate")
+        await app.workers.wait_for_complete()
+        await pilot.pause()
+        assert not app.busy
+        assert "Generation failed" in str(app.query_one("#status", Static).render())
+        assert output.read_text() == "existing file"

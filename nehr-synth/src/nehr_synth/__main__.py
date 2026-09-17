@@ -72,7 +72,8 @@ def main(argv=None) -> int:
                     0
                     if all(
                         findings[k] == "available"
-                        for k in ("fixtures", "java", "validator", "definitions")
+                        for k in ("fixtures", "java", "validator", "definitions", "synthea")
+                        if k in findings
                     )
                     else 2
                 )

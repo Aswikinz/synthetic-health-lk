@@ -273,10 +273,11 @@ Linux, and Docker/rootless Podman smoke tests. Pull requests exercise amd64;
 main/tag runs exercise amd64 and arm64 via QEMU. Image builds and runtime tests
 are distinct steps. Small failure reports are retained as artifacts.
 
-Codecov upload is configured with a pinned action, project/patch thresholds and
-upload failures visible in CI. Repository owners must connect the Codecov GitHub
-app and configure `CODECOV_TOKEN` (or enable Codecov's public-repository tokenless
-upload policy). No successful hosted Codecov upload is claimed by local tests.
+Codecov upload uses a pinned action and GitHub OIDC authentication, with
+project/patch thresholds and upload failures visible in CI. No stored upload
+token is required. Repository owners must connect the Codecov GitHub app.
+See the [Codecov OIDC instructions](https://github.com/codecov/codecov-action#using-oidc).
+Local tests alone do not establish a successful hosted upload.
 
 Version tags matching `pyproject.toml` invoke the same CI checks before publishing
 wheel/sdist/checksums/notes to GitHub Releases and amd64/arm64 images to GHCR.

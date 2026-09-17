@@ -1,6 +1,6 @@
 # Notices for bundled components
 
-nehr-synth is distributed under GPL-3.0-or-later; see LICENSE. Synthetic name,
+nehr-synth is distributed under the MIT License; see LICENSE. Synthetic name,
 geography and clinical-module fixtures were authored for this application.
 
 * **Synthea v4.0.0** — The MITRE Corporation, Apache License 2.0.

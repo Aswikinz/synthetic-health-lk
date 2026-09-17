@@ -254,6 +254,7 @@ class SynthApp(App):
                 self.notify("Saved FHIR exported; no regeneration")
             elif action == "mutate" and self.current_run and not self.busy:
                 self.control = Control()
+                self.started = time.monotonic()
                 self.set_busy(True)
                 self.mutate_worker(self.current_run, str(self.query_one("#mutation", Select).value))
         except (ValueError, OSError, KeyError) as error:
@@ -284,6 +285,9 @@ class SynthApp(App):
             )
             self.current_run = path
             self.call_from_thread(self.result_ready)
+        except (ValueError, OSError, KeyError) as error:
+            self.call_from_thread(self.report_progress, f"Generation failed: {error}")
+            self.call_from_thread(self.notify, str(error), severity="error")
         finally:
             self.call_from_thread(self.set_busy, False)
 

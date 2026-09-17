@@ -115,7 +115,18 @@ neither a Python matrix nor an emulated Linux test proves those combinations.
 The source distribution excludes local tools, virtual environments and generated
 run directories. Local wheel/source builds succeeded at approximately 52/84 KB.
 Release notes/checksum generation was exercised with matching `v0.1.0` metadata.
-`NOTICES.md` and GPL licensing are included in package metadata. Definition/JAR
+`NOTICES.md` and MIT licensing are included in package metadata. Definition/JAR
 checksums are enforced before use, including checks for modified extracted JSON
 definitions. All action revisions and the multi-architecture base-image manifest
 are pinned. Codecov uses an 85% project/patch threshold and surfaces upload failure.
+
+## Pre-merge review
+
+The first hosted run passed the real Java suite and macOS tests. It exposed a
+Windows UI-test timing assumption and a Codecov authentication failure. The search
+test now waits for its observable result, and uploads use GitHub OIDC instead of
+an absent upload token. The review also fixed `doctor` returning success with a
+missing outpatient simulator and made output-folder errors visible in the TUI.
+Regression checks brought the local Windows suite to **60 passed**, **90.91%**
+branch-inclusive coverage. Package licensing now follows the MIT license on main.
+Final hosted results are available in the repository's GitHub Actions history.

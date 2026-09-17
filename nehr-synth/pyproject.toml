@@ -9,7 +9,7 @@ description = "Local synthetic Sri Lankan FHIR R4 datasets and terminal inspecto
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = ["textual==6.1.0"]
-license = "GPL-3.0-or-later"
+license = "MIT"
 license-files = ["LICENSE", "NOTICES.md"]
 
 [project.scripts]
