@@ -1,0 +1,14 @@
+coverage:
+  status:
+    project:
+      default:
+        target: 85%
+        threshold: 1%
+    patch:
+      default:
+        target: 85%
+comment: false
+flags:
+  unit:
+    paths:
+      - nehr-synth/src/
