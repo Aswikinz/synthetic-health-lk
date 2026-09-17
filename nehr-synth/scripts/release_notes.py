@@ -25,7 +25,7 @@ dist = root / "dist"
     "\n".join(
         f"{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}"
         for p in sorted(dist.iterdir())
-        if p.is_file() and p.name != "SHA256SUMS"
+        if p.is_file() and p.name != "SHA256SUMS" and not p.name.startswith(".")
     )
     + "\n"
 )

@@ -104,6 +104,22 @@ def test_mutation_requires_suitable_baseline(config, positive):
         mutate(positive, "phn-bad-checksum")
 
 
+def test_expected_fault_does_not_hide_validator_outage(positive, monkeypatch):
+    def unavailable(*args):
+        return {
+            "status": "failed",
+            "ig": "incomplete",
+            "issues": [
+                {"layer": "application", "severity": "error", "path": "identifier.phn"},
+                {"layer": "execution", "severity": "error", "path": "validator"},
+            ],
+        }
+
+    monkeypatch.setattr("nehr_synth.mutate.validate_graph", unavailable)
+    path = mutate(positive, "phn-bad-checksum")
+    assert read_json(path / "mutation.json")["result"] == "unexpected failure"
+
+
 def test_real_subprocess_cancel_and_timeout(tmp_path):
     control = Control()
     timer = threading.Timer(0.2, control.cancel)

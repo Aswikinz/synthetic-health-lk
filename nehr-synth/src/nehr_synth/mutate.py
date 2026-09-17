@@ -76,7 +76,7 @@ def mutate(directory: Path, case: str, control: Control | None = None) -> Path:
     ]
     status = (
         "expected failure observed"
-        if expected
+        if expected and observed["ig"] != "incomplete"
         else "unexpected pass"
         if observed["status"] == "passed"
         else "unexpected failure"

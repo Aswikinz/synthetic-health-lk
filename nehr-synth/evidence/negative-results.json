@@ -1,0 +1,88 @@
+[
+  {
+    "case": "address-missing-district",
+    "baseline_sha256": "002d00812391216601baedb0d49463eed40c07f8d9794a4e74762da100f0b88f",
+    "patient": "cbbd89bf-cd44-541d-8449-7e8ec8b25656",
+    "resource": "Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656",
+    "changed_paths": [
+      "address[0].district"
+    ],
+    "expected_layer": "ig",
+    "result": "expected failure observed",
+    "ig": "failed",
+    "errors": [
+      {
+        "layer": "ig",
+        "severity": "error",
+        "resource": "Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656",
+        "path": "Bundle.entry[0].resource/*Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656*/.address[0]",
+        "message": "Address.district: minimum required = 1, but only found 0 (from http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKAddress|0.1.0)",
+        "code": "structure"
+      }
+    ]
+  },
+  {
+    "case": "gn-wrong-value-type",
+    "baseline_sha256": "002d00812391216601baedb0d49463eed40c07f8d9794a4e74762da100f0b88f",
+    "patient": "cbbd89bf-cd44-541d-8449-7e8ec8b25656",
+    "resource": "Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656",
+    "changed_paths": [
+      "address[0].extension[0].value[x]"
+    ],
+    "expected_layer": "ig",
+    "result": "expected failure observed",
+    "ig": "failed",
+    "errors": [
+      {
+        "layer": "ig",
+        "severity": "error",
+        "resource": "Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656",
+        "path": "Bundle.entry[0].resource/*Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656*/.address[0].extension[0]",
+        "message": "The Extension 'http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/lk-gn-extension' definition allows for the types [code] but found type string",
+        "code": "structure"
+      }
+    ]
+  },
+  {
+    "case": "phn-bad-checksum",
+    "baseline_sha256": "002d00812391216601baedb0d49463eed40c07f8d9794a4e74762da100f0b88f",
+    "patient": "cbbd89bf-cd44-541d-8449-7e8ec8b25656",
+    "resource": "Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656",
+    "changed_paths": [
+      "identifier.phn"
+    ],
+    "expected_layer": "application",
+    "result": "expected failure observed",
+    "ig": "passed",
+    "errors": [
+      {
+        "layer": "application",
+        "severity": "error",
+        "resource": "Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656",
+        "path": "identifier.phn",
+        "message": "PHN convention/checksum mismatch"
+      }
+    ]
+  },
+  {
+    "case": "broken-patient-reference",
+    "baseline_sha256": "332a74825afdbf10cd28dc6e43bb15e7d1200526684294b82d52562924de4bab",
+    "patient": "cbbd89bf-cd44-541d-8449-7e8ec8b25656",
+    "resource": "Encounter/6780c326-ae12-59e9-867e-5cc26bd723fa",
+    "changed_paths": [
+      "subject.reference"
+    ],
+    "expected_layer": "application",
+    "result": "expected failure observed",
+    "ig": "passed",
+    "errors": [
+      {
+        "layer": "application",
+        "severity": "error",
+        "resource": "Encounter/6780c326-ae12-59e9-867e-5cc26bd723fa",
+        "path": ".subject.reference",
+        "message": "Unresolved reference: Patient/missing-synthetic-patient"
+      }
+    ]
+  }
+]
