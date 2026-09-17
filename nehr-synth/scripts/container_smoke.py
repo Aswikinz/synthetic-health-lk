@@ -121,7 +121,9 @@ try:
             captured += os.read(master, 65536)
         if process.poll() is not None:
             break
-    assert b"Receiver" in captured, f"TUI failed to start: {captured[-5000:].decode(errors='replace')}"
+    assert b"Receiver" in captured, (
+        f"TUI failed to start: {captured[-5000:].decode(errors='replace')}"
+    )
     os.write(master, b"\x11")  # Ctrl+Q
     deadline = time.monotonic() + 45
     while process.poll() is None and time.monotonic() < deadline:
