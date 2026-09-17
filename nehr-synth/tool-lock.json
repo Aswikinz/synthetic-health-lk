@@ -1,0 +1,22 @@
+{
+  "java": "21.0.12.1+1",
+  "validator": "6.10.4",
+  "synthea": "v4.0.0",
+  "artifacts": [
+    {
+      "name": "synthea.jar",
+      "url": "https://github.com/synthetichealth/synthea/releases/download/v4.0.0/synthea-with-dependencies.jar",
+      "sha256": "ed43c20ad40ba5c3bc724503a5af032715fe3c491620b766148e7c2361e6ecc1"
+    },
+    {
+      "name": "validator.jar",
+      "url": "https://github.com/hapifhir/org.hl7.fhir.core/releases/download/6.10.4/validator_cli.jar",
+      "sha256": "1106b9d58f9e363e47bea7c4fc065841e5fc91fe9d062775c3bfdd212bd653cc"
+    },
+    {
+      "name": "java.zip",
+      "url": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jre_x64_windows_hotspot_21.0.12.1_1.zip",
+      "sha256": "d35f31e712f0fcf6ac5a093edc90204fbff22f720ba3950bd09d331d5e621636"
+    }
+  ]
+}

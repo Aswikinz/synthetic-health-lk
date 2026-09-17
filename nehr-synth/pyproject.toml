@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "nehr-synth"
+version = "0.1.0"
+description = "Local synthetic Sri Lankan FHIR R4 datasets and terminal inspector"
+requires-python = ">=3.12"
+dependencies = ["textual==6.1.0"]
+license = "GPL-3.0-or-later"
+
+[project.scripts]
+nehr-synth = "nehr_synth.__main__:main"
+
+[dependency-groups]
+dev = ["pytest==8.4.2", "pytest-asyncio==1.2.0", "pytest-cov==7.0.0", "ruff==0.13.0"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/nehr_synth"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"ig-lock.json" = "nehr_synth/data/ig-lock.json"
+"tool-lock.json" = "nehr_synth/data/tool-lock.json"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+markers = ["integration: requires pinned Java tools and definitions"]
+
+[tool.coverage.run]
+branch = true
+source = ["nehr_synth"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 85
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

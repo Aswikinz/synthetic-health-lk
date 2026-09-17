@@ -1,0 +1,3 @@
+province,district,ds_division,gn_code,gn_name,scheme,provenance
+Western,Colombo,Test DS Colombo,TEST-GN-001,Test GN Colombo,synthetic-v1,Authored isolated test locality; not an official division
+Northern,Jaffna,Test DS Jaffna,TEST-GN-002,Test GN Jaffna,synthetic-v1,Authored isolated test locality; not an official division
