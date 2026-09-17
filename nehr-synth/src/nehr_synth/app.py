@@ -85,6 +85,7 @@ class SynthApp(App):
     TITLE = "nehr-synth"
     BINDINGS = [
         ("ctrl+q", "quit", "Quit"),
+        ("ctrl+c", "cancel", "Cancel"),
         ("escape", "cancel", "Cancel run"),
         ("f1", "help", "Help"),
     ]
@@ -288,6 +289,16 @@ class SynthApp(App):
 
     def result_ready(self):
         self.query_one("#inspect-result", Button).disabled = False
+        manifest = read_json(self.current_run / "manifest.json")
+        self.query_one("#status", Static).update(
+            f"{manifest['status'].upper()} · Requested {manifest['requested_patients']} · "
+            f"Candidates {manifest['generated_candidates']} · "
+            f"Exported {manifest.get('exported_patients', 0)}\n"
+            f"Resources: {manifest['counts']}\n"
+            f"Identifiers: {manifest.get('identifier_counts', {})} · "
+            f"GN patients: {manifest.get('gn_populated_patients', 0)}\n"
+            "NIC: structural-only · Registry: not checked · Receiver: unconfirmed"
+        )
 
     @work(thread=True, exit_on_error=False)
     def mutate_worker(self, path: Path, case: str):
@@ -326,11 +337,15 @@ class SynthApp(App):
         )
 
     def inspect(self, path: Path):
-        manifest, resources, _ = open_run(path)
+        try:
+            manifest, resources, _ = open_run(path)
+        except (OSError, ValueError, KeyError) as error:
+            manifest, resources = read_json(path / "manifest.json"), []
+            manifest = {**manifest, "inspection_issue": str(error)}
         self.current_run, self.resources = path, resources
         self.query_one("#run-path", Input).value = str(path)
         self.query_one("#json", TextArea).load_text(
-            json.dumps(manifest.get("validation", manifest), ensure_ascii=False, indent=2)
+            json.dumps(manifest, ensure_ascii=False, indent=2)
         )
         self.filter_patients("")
         self.query_one("#tabs", TabbedContent).active = "inspect-tab"
@@ -353,10 +368,18 @@ class SynthApp(App):
             self.query_one("#run-path", Input).value = str(event.value)
 
     def on_data_table_row_selected(self, event: DataTable.RowSelected):
+        from .validate import references
+
         pid = event.row_key.value
         graph = [
             r
             for r in self.resources
             if r["id"] == pid or r.get("subject", {}).get("reference") == f"Patient/{pid}"
+        ]
+        linked = {ref for resource in graph for _, ref in references(resource)}
+        graph += [
+            resource
+            for resource in self.resources
+            if resource not in graph and f"{resource['resourceType']}/{resource['id']}" in linked
         ]
         self.query_one("#json", TextArea).load_text(json.dumps(graph, ensure_ascii=False, indent=2))

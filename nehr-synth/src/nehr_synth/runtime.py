@@ -40,7 +40,9 @@ def read_json(path: Path):
 
 
 def write_json(path: Path, value):
-    path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    path.write_text(
+        json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n"
+    )
 
 
 def checked(path: Path, expected: str) -> Path:
@@ -131,6 +133,16 @@ def prepare_packages(config: Config) -> Path:
             target = cache / f"{package['id']}#{version}"
             marker = target / ".archive-sha256"
             if marker.exists() and marker.read_text() == package["sha256"]:
+                # The JVM may rebuild .index.json; normative definitions must remain exact.
+                with tarfile.open(archive) as stream:
+                    for member in stream:
+                        if (
+                            member.isfile()
+                            and member.name.endswith(".json")
+                            and not member.name.endswith("/.index.json")
+                        ):
+                            expected = hashlib.sha256(stream.extractfile(member).read()).hexdigest()
+                            checked(target / member.name, expected)
                 continue
             target.mkdir(parents=True, exist_ok=True)
             with tarfile.open(archive) as stream:

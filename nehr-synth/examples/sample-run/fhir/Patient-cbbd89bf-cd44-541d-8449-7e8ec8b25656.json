@@ -1,0 +1,52 @@
+{
+  "resourceType": "Patient",
+  "id": "cbbd89bf-cd44-541d-8449-7e8ec8b25656",
+  "meta": {
+    "profile": [
+      "http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://fhir.health.gov.lk/ips/identifier/nic",
+      "value": "400553113806"
+    },
+    {
+      "system": "http://fhir.health.gov.lk/ips/identifier/phn",
+      "value": "TESTH8MXVQ6"
+    },
+    {
+      "system": "http://fhir.health.gov.lk/identifier/passport",
+      "value": "TEST-P0000001"
+    }
+  ],
+  "name": [
+    {
+      "family": "Perera",
+      "given": [
+        "Nimal",
+        "Sunil"
+      ],
+      "text": "Nimal Sunil Perera"
+    }
+  ],
+  "gender": "male",
+  "birthDate": "2000-10-18",
+  "address": [
+    {
+      "line": [
+        "1 Synthetic Test Lane"
+      ],
+      "city": "Test DS Jaffna",
+      "district": "Jaffna",
+      "state": "Northern",
+      "country": "LK",
+      "extension": [
+        {
+          "url": "http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/lk-gn-extension",
+          "valueCode": "TEST-GN-002"
+        }
+      ]
+    }
+  ]
+}

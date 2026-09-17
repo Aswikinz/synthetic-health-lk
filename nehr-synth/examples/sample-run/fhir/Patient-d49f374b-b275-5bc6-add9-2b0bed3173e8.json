@@ -1,0 +1,51 @@
+{
+  "resourceType": "Patient",
+  "id": "d49f374b-b275-5bc6-add9-2b0bed3173e8",
+  "meta": {
+    "profile": [
+      "http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://fhir.health.gov.lk/ips/identifier/nic",
+      "value": "930177723575"
+    },
+    {
+      "system": "http://fhir.health.gov.lk/ips/identifier/phn",
+      "value": "TESTM93MRR2"
+    },
+    {
+      "system": "http://fhir.health.gov.lk/identifier/passport",
+      "value": "TEST-P0000007"
+    }
+  ],
+  "name": [
+    {
+      "family": "சிவகுமார்",
+      "given": [
+        "கலா"
+      ],
+      "text": "கலா சிவகுமார்"
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1973-09-17",
+  "address": [
+    {
+      "line": [
+        "7 Synthetic Test Lane"
+      ],
+      "city": "Test DS Colombo",
+      "district": "Colombo",
+      "state": "Western",
+      "country": "LK",
+      "extension": [
+        {
+          "url": "http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/lk-gn-extension",
+          "valueCode": "TEST-GN-001"
+        }
+      ]
+    }
+  ]
+}

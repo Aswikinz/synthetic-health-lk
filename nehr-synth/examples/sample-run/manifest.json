@@ -1,0 +1,758 @@
+{
+  "schema_version": 1,
+  "application": "0.1.0",
+  "mapping_version": 1,
+  "run_id": "741d7300a747",
+  "preset": "demographics",
+  "created_at": "2026-09-17T04:59:12.066481+00:00",
+  "status": "passed",
+  "receiver_compatibility": "unconfirmed",
+  "target": "fhir.lk.nehr#0.1.0 / R4 4.0.1",
+  "requested_patients": 10,
+  "generated_candidates": 10,
+  "resources": [
+    {
+      "type": "Patient",
+      "id": "cbbd89bf-cd44-541d-8449-7e8ec8b25656",
+      "file": "fhir/Patient-cbbd89bf-cd44-541d-8449-7e8ec8b25656.json",
+      "sha256": "a9dc31f62cf9f976c6010056e5a4b1d214f198b2066fd4d98e87a6e7802781a8",
+      "dependencies": []
+    },
+    {
+      "type": "Patient",
+      "id": "afa4833b-22f7-5eb1-9675-60296563b3f3",
+      "file": "fhir/Patient-afa4833b-22f7-5eb1-9675-60296563b3f3.json",
+      "sha256": "9318b9e8fac73f8e3ef2a4dee4b562b22777f50b2480b429cacec258af64919e",
+      "dependencies": []
+    },
+    {
+      "type": "Patient",
+      "id": "a5a10466-2203-5133-8f17-a53802233d75",
+      "file": "fhir/Patient-a5a10466-2203-5133-8f17-a53802233d75.json",
+      "sha256": "520289a77e8fcc1ec3198a7bd36c45cfb64154179311d4c2e69e757fe8698c37",
+      "dependencies": []
+    },
+    {
+      "type": "Patient",
+      "id": "bd498a1d-1d9c-5dd7-8bd2-99ab583ee2a7",
+      "file": "fhir/Patient-bd498a1d-1d9c-5dd7-8bd2-99ab583ee2a7.json",
+      "sha256": "b2eaa0f96bb047c148f1c74a38147ce1480044d37895c541eca354fecc72c278",
+      "dependencies": []
+    },
+    {
+      "type": "Patient",
+      "id": "a2fe44a4-eab5-5488-8825-5e49bf892f92",
+      "file": "fhir/Patient-a2fe44a4-eab5-5488-8825-5e49bf892f92.json",
+      "sha256": "eaf63468cd6108536c1a6b95f325807df6a9fae0df832c93d605ac444c0757a7",
+      "dependencies": []
+    },
+    {
+      "type": "Patient",
+      "id": "93d1605d-82c7-595a-b51e-7bedfb6ae2c1",
+      "file": "fhir/Patient-93d1605d-82c7-595a-b51e-7bedfb6ae2c1.json",
+      "sha256": "63b30d536befe404b704e4d6039833e4362a0fd4d561ed508da9a843d594fd11",
+      "dependencies": []
+    },
+    {
+      "type": "Patient",
+      "id": "d49f374b-b275-5bc6-add9-2b0bed3173e8",
+      "file": "fhir/Patient-d49f374b-b275-5bc6-add9-2b0bed3173e8.json",
+      "sha256": "48155b6b6ceea0e47607d5f76944abe2cca2674a3c05f0e8f010ba84bf43909d",
+      "dependencies": []
+    },
+    {
+      "type": "Patient",
+      "id": "8ac2405e-c1f1-599a-89b9-290a3f2c74f2",
+      "file": "fhir/Patient-8ac2405e-c1f1-599a-89b9-290a3f2c74f2.json",
+      "sha256": "42b0ba3e91585a03ce2d92c59f40108696f0dbfb4e85f00798983a6785f57829",
+      "dependencies": []
+    },
+    {
+      "type": "Patient",
+      "id": "329bd5ac-48ee-5ce1-8e58-18a490cab7ea",
+      "file": "fhir/Patient-329bd5ac-48ee-5ce1-8e58-18a490cab7ea.json",
+      "sha256": "f85839801d9d90d725a692ee088c563959bdb5b274ba6a1077357306d85cd836",
+      "dependencies": []
+    },
+    {
+      "type": "Patient",
+      "id": "aa4d1723-d99a-5097-8928-55e0631c3967",
+      "file": "fhir/Patient-aa4d1723-d99a-5097-8928-55e0631c3967.json",
+      "sha256": "c1ce05a7815721f7136ea519aa1aba5e3c98edb0fb62105dcf6f78be36474b26",
+      "dependencies": []
+    }
+  ],
+  "counts": {
+    "Patient": 10
+  },
+  "assignments": {
+    "cbbd89bf-cd44-541d-8449-7e8ec8b25656": {
+      "geography": {
+        "province": "Northern",
+        "district": "Jaffna",
+        "ds_division": "Test DS Jaffna",
+        "gn_code": "TEST-GN-002",
+        "gn_name": "Test GN Jaffna",
+        "scheme": "synthetic-v1",
+        "provenance": "Authored isolated test locality; not an official division"
+      },
+      "nic_encoded_attribute": null,
+      "nic_mode": "structural-only"
+    },
+    "afa4833b-22f7-5eb1-9675-60296563b3f3": {
+      "geography": {
+        "province": "Western",
+        "district": "Colombo",
+        "ds_division": "Test DS Colombo",
+        "gn_code": "TEST-GN-001",
+        "gn_name": "Test GN Colombo",
+        "scheme": "synthetic-v1",
+        "provenance": "Authored isolated test locality; not an official division"
+      },
+      "nic_encoded_attribute": null,
+      "nic_mode": "structural-only"
+    },
+    "a5a10466-2203-5133-8f17-a53802233d75": {
+      "geography": {
+        "province": "Western",
+        "district": "Colombo",
+        "ds_division": "Test DS Colombo",
+        "gn_code": "TEST-GN-001",
+        "gn_name": "Test GN Colombo",
+        "scheme": "synthetic-v1",
+        "provenance": "Authored isolated test locality; not an official division"
+      },
+      "nic_encoded_attribute": null,
+      "nic_mode": "structural-only"
+    },
+    "bd498a1d-1d9c-5dd7-8bd2-99ab583ee2a7": {
+      "geography": {
+        "province": "Northern",
+        "district": "Jaffna",
+        "ds_division": "Test DS Jaffna",
+        "gn_code": "TEST-GN-002",
+        "gn_name": "Test GN Jaffna",
+        "scheme": "synthetic-v1",
+        "provenance": "Authored isolated test locality; not an official division"
+      },
+      "nic_encoded_attribute": null,
+      "nic_mode": "structural-only"
+    },
+    "a2fe44a4-eab5-5488-8825-5e49bf892f92": {
+      "geography": {
+        "province": "Western",
+        "district": "Colombo",
+        "ds_division": "Test DS Colombo",
+        "gn_code": "TEST-GN-001",
+        "gn_name": "Test GN Colombo",
+        "scheme": "synthetic-v1",
+        "provenance": "Authored isolated test locality; not an official division"
+      },
+      "nic_encoded_attribute": null,
+      "nic_mode": "structural-only"
+    },
+    "93d1605d-82c7-595a-b51e-7bedfb6ae2c1": {
+      "geography": {
+        "province": "Western",
+        "district": "Colombo",
+        "ds_division": "Test DS Colombo",
+        "gn_code": "TEST-GN-001",
+        "gn_name": "Test GN Colombo",
+        "scheme": "synthetic-v1",
+        "provenance": "Authored isolated test locality; not an official division"
+      },
+      "nic_encoded_attribute": null,
+      "nic_mode": "structural-only"
+    },
+    "d49f374b-b275-5bc6-add9-2b0bed3173e8": {
+      "geography": {
+        "province": "Western",
+        "district": "Colombo",
+        "ds_division": "Test DS Colombo",
+        "gn_code": "TEST-GN-001",
+        "gn_name": "Test GN Colombo",
+        "scheme": "synthetic-v1",
+        "provenance": "Authored isolated test locality; not an official division"
+      },
+      "nic_encoded_attribute": null,
+      "nic_mode": "structural-only"
+    },
+    "8ac2405e-c1f1-599a-89b9-290a3f2c74f2": {
+      "geography": {
+        "province": "Northern",
+        "district": "Jaffna",
+        "ds_division": "Test DS Jaffna",
+        "gn_code": "TEST-GN-002",
+        "gn_name": "Test GN Jaffna",
+        "scheme": "synthetic-v1",
+        "provenance": "Authored isolated test locality; not an official division"
+      },
+      "nic_encoded_attribute": null,
+      "nic_mode": "structural-only"
+    },
+    "329bd5ac-48ee-5ce1-8e58-18a490cab7ea": {
+      "geography": {
+        "province": "Western",
+        "district": "Colombo",
+        "ds_division": "Test DS Colombo",
+        "gn_code": "TEST-GN-001",
+        "gn_name": "Test GN Colombo",
+        "scheme": "synthetic-v1",
+        "provenance": "Authored isolated test locality; not an official division"
+      },
+      "nic_encoded_attribute": null,
+      "nic_mode": "structural-only"
+    },
+    "aa4d1723-d99a-5097-8928-55e0631c3967": {
+      "geography": {
+        "province": "Western",
+        "district": "Colombo",
+        "ds_division": "Test DS Colombo",
+        "gn_code": "TEST-GN-001",
+        "gn_name": "Test GN Colombo",
+        "scheme": "synthetic-v1",
+        "provenance": "Authored isolated test locality; not an official division"
+      },
+      "nic_encoded_attribute": null,
+      "nic_mode": "structural-only"
+    }
+  },
+  "input_hashes": {
+    "names": "ab5bcdc75f93015a80060282f7e7c9c0820cb18e115a0ed481236d6acf7104e1",
+    "geography": "8517a3119331b23f17539ade6f644873a780554ec3e55b2b226cf1d7f162c16e",
+    "ig-lock": "4cd7b3f299698b5e128e2d1824437435ca03dfd2c509fb976613115877d38f76",
+    "tool-lock": "d1b19c9a58441c43d007cfa4f94e78522fd6e8574c3327b8f86be0842c7772ce"
+  },
+  "exported_patients": 10,
+  "identifier_counts": {
+    "nic": 10,
+    "phn": 10,
+    "passport": 10
+  },
+  "gn_populated_patients": 10,
+  "identity_convention": {
+    "nic": "structural-only",
+    "phn": "ndhgs-v2-regenstrief",
+    "poi": "TEST",
+    "poi_provenance": "synthetic test configuration; not officially reserved",
+    "passport": "synthetic-prefix-serial",
+    "uniqueness_scope": "this dataset only"
+  },
+  "validation": {
+    "application": "passed",
+    "ig": "passed",
+    "identifier_format": {
+      "phn": "passed",
+      "nic": "incomplete",
+      "passport": "synthetic convention"
+    },
+    "registry_validity": "not checked",
+    "terminology_mode": "offline",
+    "terminology_endpoint": null,
+    "server_version": "not reported",
+    "lookup_date": "2026-09-17T04:59:12.162112+00:00",
+    "issues": [
+      {
+        "layer": "ig",
+        "severity": "information",
+        "resource": "graph",
+        "path": "Bundle",
+        "message": "Validate resource against profile http://hl7.org/fhir/StructureDefinition/Bundle|4.0.1",
+        "code": "informational"
+      },
+      {
+        "layer": "ig",
+        "severity": "information",
+        "resource": "graph",
+        "path": "Bundle.entry[0].resource/*Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656*/",
+        "message": "Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1",
+        "code": "informational"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[0].resource/*Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656*/.identifier[0].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[0].resource/*Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656*/.identifier[1].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[0].resource/*Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656*/.identifier[2].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[0].resource/*Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656*/",
+        "message": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
+        "code": "invariant"
+      },
+      {
+        "layer": "ig",
+        "severity": "information",
+        "resource": "graph",
+        "path": "Bundle.entry[0].resource/*Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656*/",
+        "message": "Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)",
+        "code": "informational"
+      },
+      {
+        "layer": "ig",
+        "severity": "information",
+        "resource": "graph",
+        "path": "Bundle.entry[1].resource/*Patient/afa4833b-22f7-5eb1-9675-60296563b3f3*/",
+        "message": "Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1",
+        "code": "informational"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[1].resource/*Patient/afa4833b-22f7-5eb1-9675-60296563b3f3*/.identifier[0].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[1].resource/*Patient/afa4833b-22f7-5eb1-9675-60296563b3f3*/.identifier[1].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[1].resource/*Patient/afa4833b-22f7-5eb1-9675-60296563b3f3*/.identifier[2].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[1].resource/*Patient/afa4833b-22f7-5eb1-9675-60296563b3f3*/",
+        "message": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
+        "code": "invariant"
+      },
+      {
+        "layer": "ig",
+        "severity": "information",
+        "resource": "graph",
+        "path": "Bundle.entry[1].resource/*Patient/afa4833b-22f7-5eb1-9675-60296563b3f3*/",
+        "message": "Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)",
+        "code": "informational"
+      },
+      {
+        "layer": "ig",
+        "severity": "information",
+        "resource": "graph",
+        "path": "Bundle.entry[2].resource/*Patient/a5a10466-2203-5133-8f17-a53802233d75*/",
+        "message": "Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1",
+        "code": "informational"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[2].resource/*Patient/a5a10466-2203-5133-8f17-a53802233d75*/.identifier[0].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[2].resource/*Patient/a5a10466-2203-5133-8f17-a53802233d75*/.identifier[1].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[2].resource/*Patient/a5a10466-2203-5133-8f17-a53802233d75*/.identifier[2].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[2].resource/*Patient/a5a10466-2203-5133-8f17-a53802233d75*/",
+        "message": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
+        "code": "invariant"
+      },
+      {
+        "layer": "ig",
+        "severity": "information",
+        "resource": "graph",
+        "path": "Bundle.entry[2].resource/*Patient/a5a10466-2203-5133-8f17-a53802233d75*/",
+        "message": "Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)",
+        "code": "informational"
+      },
+      {
+        "layer": "ig",
+        "severity": "information",
+        "resource": "graph",
+        "path": "Bundle.entry[3].resource/*Patient/bd498a1d-1d9c-5dd7-8bd2-99ab583ee2a7*/",
+        "message": "Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1",
+        "code": "informational"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[3].resource/*Patient/bd498a1d-1d9c-5dd7-8bd2-99ab583ee2a7*/.identifier[0].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[3].resource/*Patient/bd498a1d-1d9c-5dd7-8bd2-99ab583ee2a7*/.identifier[1].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[3].resource/*Patient/bd498a1d-1d9c-5dd7-8bd2-99ab583ee2a7*/.identifier[2].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[3].resource/*Patient/bd498a1d-1d9c-5dd7-8bd2-99ab583ee2a7*/",
+        "message": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
+        "code": "invariant"
+      },
+      {
+        "layer": "ig",
+        "severity": "information",
+        "resource": "graph",
+        "path": "Bundle.entry[3].resource/*Patient/bd498a1d-1d9c-5dd7-8bd2-99ab583ee2a7*/",
+        "message": "Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)",
+        "code": "informational"
+      },
+      {
+        "layer": "ig",
+        "severity": "information",
+        "resource": "graph",
+        "path": "Bundle.entry[4].resource/*Patient/a2fe44a4-eab5-5488-8825-5e49bf892f92*/",
+        "message": "Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1",
+        "code": "informational"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[4].resource/*Patient/a2fe44a4-eab5-5488-8825-5e49bf892f92*/.identifier[0].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[4].resource/*Patient/a2fe44a4-eab5-5488-8825-5e49bf892f92*/.identifier[1].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[4].resource/*Patient/a2fe44a4-eab5-5488-8825-5e49bf892f92*/.identifier[2].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[4].resource/*Patient/a2fe44a4-eab5-5488-8825-5e49bf892f92*/",
+        "message": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
+        "code": "invariant"
+      },
+      {
+        "layer": "ig",
+        "severity": "information",
+        "resource": "graph",
+        "path": "Bundle.entry[4].resource/*Patient/a2fe44a4-eab5-5488-8825-5e49bf892f92*/",
+        "message": "Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)",
+        "code": "informational"
+      },
+      {
+        "layer": "ig",
+        "severity": "information",
+        "resource": "graph",
+        "path": "Bundle.entry[5].resource/*Patient/93d1605d-82c7-595a-b51e-7bedfb6ae2c1*/",
+        "message": "Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1",
+        "code": "informational"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[5].resource/*Patient/93d1605d-82c7-595a-b51e-7bedfb6ae2c1*/.identifier[0].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[5].resource/*Patient/93d1605d-82c7-595a-b51e-7bedfb6ae2c1*/.identifier[1].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[5].resource/*Patient/93d1605d-82c7-595a-b51e-7bedfb6ae2c1*/.identifier[2].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[5].resource/*Patient/93d1605d-82c7-595a-b51e-7bedfb6ae2c1*/",
+        "message": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
+        "code": "invariant"
+      },
+      {
+        "layer": "ig",
+        "severity": "information",
+        "resource": "graph",
+        "path": "Bundle.entry[5].resource/*Patient/93d1605d-82c7-595a-b51e-7bedfb6ae2c1*/",
+        "message": "Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)",
+        "code": "informational"
+      },
+      {
+        "layer": "ig",
+        "severity": "information",
+        "resource": "graph",
+        "path": "Bundle.entry[6].resource/*Patient/d49f374b-b275-5bc6-add9-2b0bed3173e8*/",
+        "message": "Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1",
+        "code": "informational"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[6].resource/*Patient/d49f374b-b275-5bc6-add9-2b0bed3173e8*/.identifier[0].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[6].resource/*Patient/d49f374b-b275-5bc6-add9-2b0bed3173e8*/.identifier[1].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[6].resource/*Patient/d49f374b-b275-5bc6-add9-2b0bed3173e8*/.identifier[2].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[6].resource/*Patient/d49f374b-b275-5bc6-add9-2b0bed3173e8*/",
+        "message": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
+        "code": "invariant"
+      },
+      {
+        "layer": "ig",
+        "severity": "information",
+        "resource": "graph",
+        "path": "Bundle.entry[6].resource/*Patient/d49f374b-b275-5bc6-add9-2b0bed3173e8*/",
+        "message": "Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)",
+        "code": "informational"
+      },
+      {
+        "layer": "ig",
+        "severity": "information",
+        "resource": "graph",
+        "path": "Bundle.entry[7].resource/*Patient/8ac2405e-c1f1-599a-89b9-290a3f2c74f2*/",
+        "message": "Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1",
+        "code": "informational"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[7].resource/*Patient/8ac2405e-c1f1-599a-89b9-290a3f2c74f2*/.identifier[0].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[7].resource/*Patient/8ac2405e-c1f1-599a-89b9-290a3f2c74f2*/.identifier[1].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[7].resource/*Patient/8ac2405e-c1f1-599a-89b9-290a3f2c74f2*/.identifier[2].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[7].resource/*Patient/8ac2405e-c1f1-599a-89b9-290a3f2c74f2*/",
+        "message": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
+        "code": "invariant"
+      },
+      {
+        "layer": "ig",
+        "severity": "information",
+        "resource": "graph",
+        "path": "Bundle.entry[7].resource/*Patient/8ac2405e-c1f1-599a-89b9-290a3f2c74f2*/",
+        "message": "Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)",
+        "code": "informational"
+      },
+      {
+        "layer": "ig",
+        "severity": "information",
+        "resource": "graph",
+        "path": "Bundle.entry[8].resource/*Patient/329bd5ac-48ee-5ce1-8e58-18a490cab7ea*/",
+        "message": "Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1",
+        "code": "informational"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[8].resource/*Patient/329bd5ac-48ee-5ce1-8e58-18a490cab7ea*/.identifier[0].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[8].resource/*Patient/329bd5ac-48ee-5ce1-8e58-18a490cab7ea*/.identifier[1].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[8].resource/*Patient/329bd5ac-48ee-5ce1-8e58-18a490cab7ea*/.identifier[2].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[8].resource/*Patient/329bd5ac-48ee-5ce1-8e58-18a490cab7ea*/",
+        "message": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
+        "code": "invariant"
+      },
+      {
+        "layer": "ig",
+        "severity": "information",
+        "resource": "graph",
+        "path": "Bundle.entry[8].resource/*Patient/329bd5ac-48ee-5ce1-8e58-18a490cab7ea*/",
+        "message": "Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)",
+        "code": "informational"
+      },
+      {
+        "layer": "ig",
+        "severity": "information",
+        "resource": "graph",
+        "path": "Bundle.entry[9].resource/*Patient/aa4d1723-d99a-5097-8928-55e0631c3967*/",
+        "message": "Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1",
+        "code": "informational"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[9].resource/*Patient/aa4d1723-d99a-5097-8928-55e0631c3967*/.identifier[0].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[9].resource/*Patient/aa4d1723-d99a-5097-8928-55e0631c3967*/.identifier[1].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[9].resource/*Patient/aa4d1723-d99a-5097-8928-55e0631c3967*/.identifier[2].system",
+        "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'",
+        "code": "invalid"
+      },
+      {
+        "layer": "ig",
+        "severity": "warning",
+        "resource": "graph",
+        "path": "Bundle.entry[9].resource/*Patient/aa4d1723-d99a-5097-8928-55e0631c3967*/",
+        "message": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
+        "code": "invariant"
+      },
+      {
+        "layer": "ig",
+        "severity": "information",
+        "resource": "graph",
+        "path": "Bundle.entry[9].resource/*Patient/aa4d1723-d99a-5097-8928-55e0631c3967*/",
+        "message": "Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)",
+        "code": "informational"
+      }
+    ],
+    "package_summary": "Package Summary: [hl7.fhir.r4.core#4.0.1, hl7.fhir.xver-extensions#0.1.0, hl7.terminology.r4#6.2.0, hl7.fhir.uv.extensions.r4#5.2.0, hl7.terminology.r4#6.5.0, fhir.lk.clientregistry#0.1.0, fhir.lk.facilityregistry#0.1.0, fhir.lk.providerregistry#0.1.0, fhir.lk.nehr#0.1.0]",
+    "cache_provenance": {
+      "loinc.cache": "af4612918aa03c55cfadc688e21a41cc55e97df2a3ab379517657aa5c9e147e2",
+      "ucum.cache": "a8f31f78271d81b93237e6650a771976befb134118a15c36fdfad7b407d64379",
+      "version.ctl": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+    },
+    "status": "passed"
+  },
+  "patient_groups": {
+    "passed": 10,
+    "failed": 0,
+    "incomplete": 0
+  },
+  "patient_groups_note": "Conservative whole-graph groups; shared/unknown failures affect all patients"
+}

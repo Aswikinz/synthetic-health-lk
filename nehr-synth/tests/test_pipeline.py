@@ -28,7 +28,9 @@ def test_export_and_saved_run(positive, tmp_path):
     assert len(list((positive / "checks").iterdir())) == 1
 
 
-@pytest.mark.parametrize("fault", ["bytes", "counts", "path", "id", "references"])
+@pytest.mark.parametrize(
+    "fault", ["bytes", "counts", "path", "id", "references", "input", "identifiers"]
+)
 def test_tampered_export_rejected(positive, fault):
     manifest = read_json(positive / "manifest.json")
     entry = manifest["resources"][0]
@@ -40,6 +42,10 @@ def test_tampered_export_rejected(positive, fault):
         entry["file"] = "../../outside.json"
     elif fault == "id":
         entry["id"] = "wrong"
+    elif fault == "input":
+        (positive / "inputs/names.json").write_text("[]")
+    elif fault == "identifiers":
+        manifest["identifier_counts"]["phn"] += 1
     else:
         entry["dependencies"] = ["Patient/absent"]
     write_json(positive / "manifest.json", manifest)

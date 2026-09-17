@@ -1,0 +1,1715 @@
+{
+  "resourceType" : "OperationOutcome",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>OperationOutcome </b></p><table class=\"grid\"><tr><td><b>Severity</b></td><td><b>Location</b></td><td><b>Code</b></td><td><b>Details</b></td><td><b>Diagnostics</b></td><td><b>Source</b></td></tr><tr><td>Information</td><td>Bundle</td><td>Informational Note</td><td>Validate resource against profile http://hl7.org/fhir/StructureDefinition/Bundle|4.0.1</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[0].resource/*Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656*/</td><td>Informational Note</td><td>Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[0].resource/*Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656*/.identifier[0].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[0].resource/*Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656*/.identifier[1].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[0].resource/*Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656*/.identifier[2].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[0].resource/*Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656*/</td><td>Validation rule failed</td><td>Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[0].resource/*Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656*/</td><td>Informational Note</td><td>Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[1].resource/*Patient/afa4833b-22f7-5eb1-9675-60296563b3f3*/</td><td>Informational Note</td><td>Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[1].resource/*Patient/afa4833b-22f7-5eb1-9675-60296563b3f3*/.identifier[0].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[1].resource/*Patient/afa4833b-22f7-5eb1-9675-60296563b3f3*/.identifier[1].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[1].resource/*Patient/afa4833b-22f7-5eb1-9675-60296563b3f3*/.identifier[2].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[1].resource/*Patient/afa4833b-22f7-5eb1-9675-60296563b3f3*/</td><td>Validation rule failed</td><td>Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[1].resource/*Patient/afa4833b-22f7-5eb1-9675-60296563b3f3*/</td><td>Informational Note</td><td>Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[2].resource/*Patient/a5a10466-2203-5133-8f17-a53802233d75*/</td><td>Informational Note</td><td>Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[2].resource/*Patient/a5a10466-2203-5133-8f17-a53802233d75*/.identifier[0].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[2].resource/*Patient/a5a10466-2203-5133-8f17-a53802233d75*/.identifier[1].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[2].resource/*Patient/a5a10466-2203-5133-8f17-a53802233d75*/.identifier[2].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[2].resource/*Patient/a5a10466-2203-5133-8f17-a53802233d75*/</td><td>Validation rule failed</td><td>Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[2].resource/*Patient/a5a10466-2203-5133-8f17-a53802233d75*/</td><td>Informational Note</td><td>Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[3].resource/*Patient/bd498a1d-1d9c-5dd7-8bd2-99ab583ee2a7*/</td><td>Informational Note</td><td>Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[3].resource/*Patient/bd498a1d-1d9c-5dd7-8bd2-99ab583ee2a7*/.identifier[0].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[3].resource/*Patient/bd498a1d-1d9c-5dd7-8bd2-99ab583ee2a7*/.identifier[1].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[3].resource/*Patient/bd498a1d-1d9c-5dd7-8bd2-99ab583ee2a7*/.identifier[2].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[3].resource/*Patient/bd498a1d-1d9c-5dd7-8bd2-99ab583ee2a7*/</td><td>Validation rule failed</td><td>Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[3].resource/*Patient/bd498a1d-1d9c-5dd7-8bd2-99ab583ee2a7*/</td><td>Informational Note</td><td>Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[4].resource/*Patient/a2fe44a4-eab5-5488-8825-5e49bf892f92*/</td><td>Informational Note</td><td>Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[4].resource/*Patient/a2fe44a4-eab5-5488-8825-5e49bf892f92*/.identifier[0].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[4].resource/*Patient/a2fe44a4-eab5-5488-8825-5e49bf892f92*/.identifier[1].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[4].resource/*Patient/a2fe44a4-eab5-5488-8825-5e49bf892f92*/.identifier[2].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[4].resource/*Patient/a2fe44a4-eab5-5488-8825-5e49bf892f92*/</td><td>Validation rule failed</td><td>Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[4].resource/*Patient/a2fe44a4-eab5-5488-8825-5e49bf892f92*/</td><td>Informational Note</td><td>Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[5].resource/*Patient/93d1605d-82c7-595a-b51e-7bedfb6ae2c1*/</td><td>Informational Note</td><td>Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[5].resource/*Patient/93d1605d-82c7-595a-b51e-7bedfb6ae2c1*/.identifier[0].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[5].resource/*Patient/93d1605d-82c7-595a-b51e-7bedfb6ae2c1*/.identifier[1].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[5].resource/*Patient/93d1605d-82c7-595a-b51e-7bedfb6ae2c1*/.identifier[2].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[5].resource/*Patient/93d1605d-82c7-595a-b51e-7bedfb6ae2c1*/</td><td>Validation rule failed</td><td>Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[5].resource/*Patient/93d1605d-82c7-595a-b51e-7bedfb6ae2c1*/</td><td>Informational Note</td><td>Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[6].resource/*Patient/d49f374b-b275-5bc6-add9-2b0bed3173e8*/</td><td>Informational Note</td><td>Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[6].resource/*Patient/d49f374b-b275-5bc6-add9-2b0bed3173e8*/.identifier[0].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[6].resource/*Patient/d49f374b-b275-5bc6-add9-2b0bed3173e8*/.identifier[1].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[6].resource/*Patient/d49f374b-b275-5bc6-add9-2b0bed3173e8*/.identifier[2].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[6].resource/*Patient/d49f374b-b275-5bc6-add9-2b0bed3173e8*/</td><td>Validation rule failed</td><td>Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[6].resource/*Patient/d49f374b-b275-5bc6-add9-2b0bed3173e8*/</td><td>Informational Note</td><td>Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[7].resource/*Patient/8ac2405e-c1f1-599a-89b9-290a3f2c74f2*/</td><td>Informational Note</td><td>Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[7].resource/*Patient/8ac2405e-c1f1-599a-89b9-290a3f2c74f2*/.identifier[0].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[7].resource/*Patient/8ac2405e-c1f1-599a-89b9-290a3f2c74f2*/.identifier[1].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[7].resource/*Patient/8ac2405e-c1f1-599a-89b9-290a3f2c74f2*/.identifier[2].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[7].resource/*Patient/8ac2405e-c1f1-599a-89b9-290a3f2c74f2*/</td><td>Validation rule failed</td><td>Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[7].resource/*Patient/8ac2405e-c1f1-599a-89b9-290a3f2c74f2*/</td><td>Informational Note</td><td>Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[8].resource/*Patient/329bd5ac-48ee-5ce1-8e58-18a490cab7ea*/</td><td>Informational Note</td><td>Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[8].resource/*Patient/329bd5ac-48ee-5ce1-8e58-18a490cab7ea*/.identifier[0].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[8].resource/*Patient/329bd5ac-48ee-5ce1-8e58-18a490cab7ea*/.identifier[1].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[8].resource/*Patient/329bd5ac-48ee-5ce1-8e58-18a490cab7ea*/.identifier[2].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[8].resource/*Patient/329bd5ac-48ee-5ce1-8e58-18a490cab7ea*/</td><td>Validation rule failed</td><td>Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[8].resource/*Patient/329bd5ac-48ee-5ce1-8e58-18a490cab7ea*/</td><td>Informational Note</td><td>Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[9].resource/*Patient/aa4d1723-d99a-5097-8928-55e0631c3967*/</td><td>Informational Note</td><td>Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[9].resource/*Patient/aa4d1723-d99a-5097-8928-55e0631c3967*/.identifier[0].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[9].resource/*Patient/aa4d1723-d99a-5097-8928-55e0631c3967*/.identifier[1].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[9].resource/*Patient/aa4d1723-d99a-5097-8928-55e0631c3967*/.identifier[2].system</td><td>Invalid Content</td><td>No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[9].resource/*Patient/aa4d1723-d99a-5097-8928-55e0631c3967*/</td><td>Validation rule failed</td><td>Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[9].resource/*Patient/aa4d1723-d99a-5097-8928-55e0631c3967*/</td><td>Informational Note</td><td>Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)</td><td/><td>InstanceValidator</td></tr></table></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-file",
+    "valueString" : "C:\\Users\\aswin\\OneDrive\\Documents\\GitHub\\synthetic-health-lk\\nehr-synth\\.tools\\integration-output\\test_real_demographics_offline0\\.staging-x68qtovr\\validation-input.json"
+  }],
+  "issue" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 1
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 2
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+    }],
+    "severity" : "information",
+    "code" : "informational",
+    "details" : {
+      "text" : "Validate resource against profile http://hl7.org/fhir/StructureDefinition/Bundle|4.0.1"
+    },
+    "expression" : ["Bundle"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 7
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Bundle|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "informational",
+    "details" : {
+      "text" : "Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    },
+    "expression" : ["Bundle.entry[0].resource/*Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 17
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 69
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'"
+    },
+    "expression" : ["Bundle.entry[0].resource/*Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656*/.identifier[0].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 21
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 69
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'"
+    },
+    "expression" : ["Bundle.entry[0].resource/*Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656*/.identifier[1].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 25
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 70
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'"
+    },
+    "expression" : ["Bundle.entry[0].resource/*Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656*/.identifier[2].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 7
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invariant",
+    "details" : {
+      "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+    },
+    "expression" : ["Bundle.entry[0].resource/*Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 7
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST_META"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "informational",
+    "details" : {
+      "text" : "Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)"
+    },
+    "expression" : ["Bundle.entry[0].resource/*Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 62
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0"
+    }],
+    "severity" : "information",
+    "code" : "informational",
+    "details" : {
+      "text" : "Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    },
+    "expression" : ["Bundle.entry[1].resource/*Patient/afa4833b-22f7-5eb1-9675-60296563b3f3*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 72
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 69
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'"
+    },
+    "expression" : ["Bundle.entry[1].resource/*Patient/afa4833b-22f7-5eb1-9675-60296563b3f3*/.identifier[0].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 76
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 69
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'"
+    },
+    "expression" : ["Bundle.entry[1].resource/*Patient/afa4833b-22f7-5eb1-9675-60296563b3f3*/.identifier[1].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 80
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 70
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'"
+    },
+    "expression" : ["Bundle.entry[1].resource/*Patient/afa4833b-22f7-5eb1-9675-60296563b3f3*/.identifier[2].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 62
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invariant",
+    "details" : {
+      "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+    },
+    "expression" : ["Bundle.entry[1].resource/*Patient/afa4833b-22f7-5eb1-9675-60296563b3f3*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 62
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST_META"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "informational",
+    "details" : {
+      "text" : "Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)"
+    },
+    "expression" : ["Bundle.entry[1].resource/*Patient/afa4833b-22f7-5eb1-9675-60296563b3f3*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 116
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0"
+    }],
+    "severity" : "information",
+    "code" : "informational",
+    "details" : {
+      "text" : "Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    },
+    "expression" : ["Bundle.entry[2].resource/*Patient/a5a10466-2203-5133-8f17-a53802233d75*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 126
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 69
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'"
+    },
+    "expression" : ["Bundle.entry[2].resource/*Patient/a5a10466-2203-5133-8f17-a53802233d75*/.identifier[0].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 130
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 69
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'"
+    },
+    "expression" : ["Bundle.entry[2].resource/*Patient/a5a10466-2203-5133-8f17-a53802233d75*/.identifier[1].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 134
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 70
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'"
+    },
+    "expression" : ["Bundle.entry[2].resource/*Patient/a5a10466-2203-5133-8f17-a53802233d75*/.identifier[2].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 116
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invariant",
+    "details" : {
+      "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+    },
+    "expression" : ["Bundle.entry[2].resource/*Patient/a5a10466-2203-5133-8f17-a53802233d75*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 116
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST_META"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "informational",
+    "details" : {
+      "text" : "Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)"
+    },
+    "expression" : ["Bundle.entry[2].resource/*Patient/a5a10466-2203-5133-8f17-a53802233d75*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 170
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0"
+    }],
+    "severity" : "information",
+    "code" : "informational",
+    "details" : {
+      "text" : "Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    },
+    "expression" : ["Bundle.entry[3].resource/*Patient/bd498a1d-1d9c-5dd7-8bd2-99ab583ee2a7*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 180
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 69
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'"
+    },
+    "expression" : ["Bundle.entry[3].resource/*Patient/bd498a1d-1d9c-5dd7-8bd2-99ab583ee2a7*/.identifier[0].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 184
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 69
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'"
+    },
+    "expression" : ["Bundle.entry[3].resource/*Patient/bd498a1d-1d9c-5dd7-8bd2-99ab583ee2a7*/.identifier[1].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 188
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 70
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'"
+    },
+    "expression" : ["Bundle.entry[3].resource/*Patient/bd498a1d-1d9c-5dd7-8bd2-99ab583ee2a7*/.identifier[2].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 170
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invariant",
+    "details" : {
+      "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+    },
+    "expression" : ["Bundle.entry[3].resource/*Patient/bd498a1d-1d9c-5dd7-8bd2-99ab583ee2a7*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 170
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST_META"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "informational",
+    "details" : {
+      "text" : "Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)"
+    },
+    "expression" : ["Bundle.entry[3].resource/*Patient/bd498a1d-1d9c-5dd7-8bd2-99ab583ee2a7*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 225
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0"
+    }],
+    "severity" : "information",
+    "code" : "informational",
+    "details" : {
+      "text" : "Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    },
+    "expression" : ["Bundle.entry[4].resource/*Patient/a2fe44a4-eab5-5488-8825-5e49bf892f92*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 235
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 69
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'"
+    },
+    "expression" : ["Bundle.entry[4].resource/*Patient/a2fe44a4-eab5-5488-8825-5e49bf892f92*/.identifier[0].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 239
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 69
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'"
+    },
+    "expression" : ["Bundle.entry[4].resource/*Patient/a2fe44a4-eab5-5488-8825-5e49bf892f92*/.identifier[1].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 243
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 70
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'"
+    },
+    "expression" : ["Bundle.entry[4].resource/*Patient/a2fe44a4-eab5-5488-8825-5e49bf892f92*/.identifier[2].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 225
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invariant",
+    "details" : {
+      "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+    },
+    "expression" : ["Bundle.entry[4].resource/*Patient/a2fe44a4-eab5-5488-8825-5e49bf892f92*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 225
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST_META"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "informational",
+    "details" : {
+      "text" : "Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)"
+    },
+    "expression" : ["Bundle.entry[4].resource/*Patient/a2fe44a4-eab5-5488-8825-5e49bf892f92*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 279
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0"
+    }],
+    "severity" : "information",
+    "code" : "informational",
+    "details" : {
+      "text" : "Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    },
+    "expression" : ["Bundle.entry[5].resource/*Patient/93d1605d-82c7-595a-b51e-7bedfb6ae2c1*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 289
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 69
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'"
+    },
+    "expression" : ["Bundle.entry[5].resource/*Patient/93d1605d-82c7-595a-b51e-7bedfb6ae2c1*/.identifier[0].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 293
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 69
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'"
+    },
+    "expression" : ["Bundle.entry[5].resource/*Patient/93d1605d-82c7-595a-b51e-7bedfb6ae2c1*/.identifier[1].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 297
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 70
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'"
+    },
+    "expression" : ["Bundle.entry[5].resource/*Patient/93d1605d-82c7-595a-b51e-7bedfb6ae2c1*/.identifier[2].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 279
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invariant",
+    "details" : {
+      "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+    },
+    "expression" : ["Bundle.entry[5].resource/*Patient/93d1605d-82c7-595a-b51e-7bedfb6ae2c1*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 279
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST_META"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "informational",
+    "details" : {
+      "text" : "Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)"
+    },
+    "expression" : ["Bundle.entry[5].resource/*Patient/93d1605d-82c7-595a-b51e-7bedfb6ae2c1*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 334
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0"
+    }],
+    "severity" : "information",
+    "code" : "informational",
+    "details" : {
+      "text" : "Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    },
+    "expression" : ["Bundle.entry[6].resource/*Patient/d49f374b-b275-5bc6-add9-2b0bed3173e8*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 344
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 69
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'"
+    },
+    "expression" : ["Bundle.entry[6].resource/*Patient/d49f374b-b275-5bc6-add9-2b0bed3173e8*/.identifier[0].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 348
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 69
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'"
+    },
+    "expression" : ["Bundle.entry[6].resource/*Patient/d49f374b-b275-5bc6-add9-2b0bed3173e8*/.identifier[1].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 352
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 70
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'"
+    },
+    "expression" : ["Bundle.entry[6].resource/*Patient/d49f374b-b275-5bc6-add9-2b0bed3173e8*/.identifier[2].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 334
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invariant",
+    "details" : {
+      "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+    },
+    "expression" : ["Bundle.entry[6].resource/*Patient/d49f374b-b275-5bc6-add9-2b0bed3173e8*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 334
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST_META"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "informational",
+    "details" : {
+      "text" : "Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)"
+    },
+    "expression" : ["Bundle.entry[6].resource/*Patient/d49f374b-b275-5bc6-add9-2b0bed3173e8*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 388
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0"
+    }],
+    "severity" : "information",
+    "code" : "informational",
+    "details" : {
+      "text" : "Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    },
+    "expression" : ["Bundle.entry[7].resource/*Patient/8ac2405e-c1f1-599a-89b9-290a3f2c74f2*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 398
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 69
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'"
+    },
+    "expression" : ["Bundle.entry[7].resource/*Patient/8ac2405e-c1f1-599a-89b9-290a3f2c74f2*/.identifier[0].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 402
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 69
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'"
+    },
+    "expression" : ["Bundle.entry[7].resource/*Patient/8ac2405e-c1f1-599a-89b9-290a3f2c74f2*/.identifier[1].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 406
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 70
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'"
+    },
+    "expression" : ["Bundle.entry[7].resource/*Patient/8ac2405e-c1f1-599a-89b9-290a3f2c74f2*/.identifier[2].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 388
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invariant",
+    "details" : {
+      "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+    },
+    "expression" : ["Bundle.entry[7].resource/*Patient/8ac2405e-c1f1-599a-89b9-290a3f2c74f2*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 388
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST_META"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "informational",
+    "details" : {
+      "text" : "Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)"
+    },
+    "expression" : ["Bundle.entry[7].resource/*Patient/8ac2405e-c1f1-599a-89b9-290a3f2c74f2*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 442
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0"
+    }],
+    "severity" : "information",
+    "code" : "informational",
+    "details" : {
+      "text" : "Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    },
+    "expression" : ["Bundle.entry[8].resource/*Patient/329bd5ac-48ee-5ce1-8e58-18a490cab7ea*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 452
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 69
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'"
+    },
+    "expression" : ["Bundle.entry[8].resource/*Patient/329bd5ac-48ee-5ce1-8e58-18a490cab7ea*/.identifier[0].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 456
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 69
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'"
+    },
+    "expression" : ["Bundle.entry[8].resource/*Patient/329bd5ac-48ee-5ce1-8e58-18a490cab7ea*/.identifier[1].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 460
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 70
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'"
+    },
+    "expression" : ["Bundle.entry[8].resource/*Patient/329bd5ac-48ee-5ce1-8e58-18a490cab7ea*/.identifier[2].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 442
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invariant",
+    "details" : {
+      "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+    },
+    "expression" : ["Bundle.entry[8].resource/*Patient/329bd5ac-48ee-5ce1-8e58-18a490cab7ea*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 442
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST_META"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "informational",
+    "details" : {
+      "text" : "Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)"
+    },
+    "expression" : ["Bundle.entry[8].resource/*Patient/329bd5ac-48ee-5ce1-8e58-18a490cab7ea*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 496
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0"
+    }],
+    "severity" : "information",
+    "code" : "informational",
+    "details" : {
+      "text" : "Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    },
+    "expression" : ["Bundle.entry[9].resource/*Patient/aa4d1723-d99a-5097-8928-55e0631c3967*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 506
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 69
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'"
+    },
+    "expression" : ["Bundle.entry[9].resource/*Patient/aa4d1723-d99a-5097-8928-55e0631c3967*/.identifier[0].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 510
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 69
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'"
+    },
+    "expression" : ["Bundle.entry[9].resource/*Patient/aa4d1723-d99a-5097-8928-55e0631c3967*/.identifier[1].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 514
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 70
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Type_Specific_Checks_DT_URL_Resolve"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invalid",
+    "details" : {
+      "text" : "No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'"
+    },
+    "expression" : ["Bundle.entry[9].resource/*Patient/aa4d1723-d99a-5097-8928-55e0631c3967*/.identifier[2].system"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 496
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "http://hl7.org/fhir/StructureDefinition/DomainResource#dom-6"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "invariant",
+    "details" : {
+      "text" : "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)"
+    },
+    "expression" : ["Bundle.entry[9].resource/*Patient/aa4d1723-d99a-5097-8928-55e0631c3967*/"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 496
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_SIGNPOST_META"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Patient|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "informational",
+    "details" : {
+      "text" : "Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)"
+    },
+    "expression" : ["Bundle.entry[9].resource/*Patient/aa4d1723-d99a-5097-8928-55e0631c3967*/"]
+  }]
+}

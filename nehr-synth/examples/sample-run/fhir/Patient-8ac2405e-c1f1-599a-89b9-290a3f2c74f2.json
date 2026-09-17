@@ -1,0 +1,51 @@
+{
+  "resourceType": "Patient",
+  "id": "8ac2405e-c1f1-599a-89b9-290a3f2c74f2",
+  "meta": {
+    "profile": [
+      "http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://fhir.health.gov.lk/ips/identifier/nic",
+      "value": "398807163926"
+    },
+    {
+      "system": "http://fhir.health.gov.lk/ips/identifier/phn",
+      "value": "TEST6MCYRD8"
+    },
+    {
+      "system": "http://fhir.health.gov.lk/identifier/passport",
+      "value": "TEST-P0000008"
+    }
+  ],
+  "name": [
+    {
+      "family": "Fernando",
+      "given": [
+        "Malini"
+      ],
+      "text": "Malini Fernando"
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1945-04-22",
+  "address": [
+    {
+      "line": [
+        "8 Synthetic Test Lane"
+      ],
+      "city": "Test DS Jaffna",
+      "district": "Jaffna",
+      "state": "Northern",
+      "country": "LK",
+      "extension": [
+        {
+          "url": "http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/lk-gn-extension",
+          "valueCode": "TEST-GN-002"
+        }
+      ]
+    }
+  ]
+}

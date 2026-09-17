@@ -65,7 +65,7 @@ async def test_cancel_worker_keeps_ui_responsive(config, monkeypatch, fake_valid
     original = pipeline.demographics
 
     def slow(c, **kwargs):
-        kwargs["cancel"].event.wait(2)
+        kwargs["cancel"].event.wait(30)
         return original(c, **kwargs)
 
     monkeypatch.setattr(pipeline, "demographics", slow)
@@ -79,3 +79,5 @@ async def test_cancel_worker_keeps_ui_responsive(config, monkeypatch, fake_valid
         assert read_json(app.current_run / "manifest.json")["status"] == "incomplete"
         assert not app.busy
         assert app.query_one("#tabs", TabbedContent).active == "progress-tab"
+        await press_button(app, pilot, "inspect-result")
+        assert "Cancelled" in app.query_one("#json", TextArea).text

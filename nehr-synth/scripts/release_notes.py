@@ -21,7 +21,11 @@ dist = root / "dist"
     "See README and RESEARCH for profile coverage, limitations and platform evidence.\n",
     encoding="utf-8",
 )
-(dist / "SHA256SUMS").write_text("\n".join(
-    f"{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}"
-    for p in sorted(dist.iterdir()) if p.is_file() and p.name != "SHA256SUMS"
-) + "\n")
+(dist / "SHA256SUMS").write_text(
+    "\n".join(
+        f"{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.name}"
+        for p in sorted(dist.iterdir())
+        if p.is_file() and p.name != "SHA256SUMS"
+    )
+    + "\n"
+)

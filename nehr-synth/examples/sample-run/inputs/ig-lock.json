@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "reviewed": "2026-09-17",
+  "fhir": "4.0.1",
+  "receiver_compatibility": "unconfirmed",
+  "packages": [
+    {
+      "id": "fhir.lk.clientregistry",
+      "version": "0.1.0",
+      "url": "https://ig.hiu.lk/fhir/clientregistry/package.tgz",
+      "sha256": "14fc351375079402b7bc06161e0fdefb5652800eb705faf89a57228a0f14f376",
+      "dependencies": {
+        "hl7.fhir.r4.core": "4.0.1",
+        "hl7.terminology.r4": "6.5.0",
+        "hl7.fhir.uv.extensions.r4": "5.2.0"
+      }
+    },
+    {
+      "id": "fhir.lk.nehr",
+      "version": "0.1.0",
+      "url": "https://ig.hiu.lk/fhir/nehr/package.tgz",
+      "sha256": "48abdfbb7b10281068c10fae84ce6bbee77075afb9ea40c6be01d85dbe131437",
+      "dependencies": {
+        "hl7.fhir.r4.core": "4.0.1",
+        "hl7.terminology.r4": "6.5.0",
+        "hl7.fhir.uv.extensions.r4": "5.2.0",
+        "fhir.lk.clientregistry": "dev",
+        "fhir.lk.providerregistry": "dev"
+      }
+    },
+    {
+      "id": "fhir.lk.providerregistry",
+      "version": "0.1.0",
+      "url": "https://ig.hiu.lk/fhir/providerregistry/package.tgz",
+      "sha256": "2f610195756cdeb5bc97e48e0fff230ebb68f3906633afc1bf9622929bd9af1f",
+      "dependencies": {
+        "hl7.fhir.r4.core": "4.0.1",
+        "hl7.terminology.r4": "6.5.0",
+        "hl7.fhir.uv.extensions.r4": "5.2.0",
+        "fhir.lk.clientregistry": "dev",
+        "fhir.lk.facilityregistry": "dev"
+      }
+    },
+    {
+      "id": "fhir.lk.facilityregistry",
+      "version": "0.1.0",
+      "url": "https://ig.hiu.lk/fhir/facilityregistry/package.tgz",
+      "sha256": "4661a7dd34dac5b45fce8b29c5bc80a7302e58761c15f04d64b8252aa20ab837",
+      "dependencies": {
+        "hl7.fhir.r4.core": "4.0.1",
+        "hl7.terminology.r4": "6.5.0",
+        "hl7.fhir.uv.extensions.r4": "5.2.0",
+        "fhir.lk.clientregistry": "dev"
+      }
+    },
+    {
+      "id": "hl7.fhir.r4.core",
+      "version": "4.0.1",
+      "url": "https://packages.fhir.org/hl7.fhir.r4.core/4.0.1",
+      "sha256": "ebd7731df7d36b5b7d39d5fb6c9d77b44bb7fe5742f1a2e87f164738c3289d44",
+      "dependencies": {}
+    },
+    {
+      "id": "hl7.terminology.r4",
+      "version": "6.5.0",
+      "url": "https://packages.fhir.org/hl7.terminology.r4/6.5.0",
+      "sha256": "a28b638483a11df696ed92198276236d759e41c7a3a8960c9e7e7d0a1185bd06",
+      "dependencies": {
+        "hl7.fhir.r4.core": "4.0.1",
+        "hl7.fhir.uv.extensions.r4": "5.2.0"
+      }
+    },
+    {
+      "id": "hl7.fhir.uv.extensions.r4",
+      "version": "5.2.0",
+      "url": "https://packages.fhir.org/hl7.fhir.uv.extensions.r4/5.2.0",
+      "sha256": "b406e75575f05676559d0759770c5939d023ee72fb2ef38e0b3259328487720a",
+      "dependencies": {
+        "hl7.fhir.r4.core": "4.0.1"
+      }
+    },
+    {
+      "id": "hl7.fhir.xver-extensions",
+      "version": "0.1.0",
+      "url": "https://packages.fhir.org/hl7.fhir.xver-extensions/0.1.0",
+      "sha256": "f3bb9fa2083402e88a02b41f433655274e8a1cca563211c8f7ba6fd0badf537a",
+      "dependencies": {
+        "hl7.fhir.r4.core": "4.0.1"
+      },
+      "purpose": "Validator runtime cross-version definitions"
+    },
+    {
+      "id": "hl7.terminology.r4",
+      "version": "6.2.0",
+      "url": "https://packages.fhir.org/hl7.terminology.r4/6.2.0",
+      "sha256": "79404c9cc95491fc0155627cd039c401a6eb4748175328131e91b709a41300e2",
+      "dependencies": {
+        "hl7.fhir.r4.core": "4.0.1"
+      },
+      "purpose": "Validator bootstrap; target IG loads 6.5.0 afterwards"
+    }
+  ],
+  "dev_resolution": {
+    "fhir.lk.clientregistry": "0.1.0",
+    "fhir.lk.nehr": "0.1.0",
+    "fhir.lk.providerregistry": "0.1.0",
+    "fhir.lk.facilityregistry": "0.1.0"
+  },
+  "bootstrap_resolution": {
+    "hl7.terminology": "hl7.terminology.r4-6.5.0",
+    "hl7.fhir.uv.extensions": "hl7.fhir.uv.extensions.r4-5.2.0"
+  }
+}

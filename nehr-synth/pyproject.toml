@@ -6,9 +6,11 @@ build-backend = "hatchling.build"
 name = "nehr-synth"
 version = "0.1.0"
 description = "Local synthetic Sri Lankan FHIR R4 datasets and terminal inspector"
+readme = "README.md"
 requires-python = ">=3.12"
 dependencies = ["textual==6.1.0"]
 license = "GPL-3.0-or-later"
+license-files = ["LICENSE", "NOTICES.md"]
 
 [project.scripts]
 nehr-synth = "nehr_synth.__main__:main"
@@ -18,6 +20,10 @@ dev = ["pytest==8.4.2", "pytest-asyncio==1.2.0", "pytest-cov==7.0.0", "ruff==0.1
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/nehr_synth"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/src", "/tests", "/scripts", "/examples", "/evidence", "/ig-lock.json", "/tool-lock.json", "/README.md", "/RESEARCH.md", "/NOTICES.md", "/pyproject.toml", "/uv.lock", "/LICENSE", "/Dockerfile", "/.dockerignore"]
+exclude = ["/.tools", "/.venv", "/.cache", "/runs", "/dist", "/build", "**/__pycache__"]
 
 [tool.hatch.build.targets.wheel.force-include]
 "ig-lock.json" = "nehr_synth/data/ig-lock.json"

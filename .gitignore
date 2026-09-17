@@ -11,3 +11,5 @@
 nehr-synth/.tools/
 nehr-synth/runs/
 nehr-synth/.cache/
+container-output/
+nehr-synth/integration-output/

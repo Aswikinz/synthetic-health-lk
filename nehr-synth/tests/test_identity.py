@@ -45,6 +45,12 @@ def test_pediatric_no_nic():
     assert all(i["system"] != SYSTEMS["nic"] for p in resources for i in p["identifier"])
 
 
+def test_leap_day_reference_date():
+    config = Config(patients=10, reference_date="2024-02-29")
+    resources, assignments = demographics(config)
+    assert not application_checks(resources, config, assignments)
+
+
 @pytest.mark.parametrize(
     "changes",
     [

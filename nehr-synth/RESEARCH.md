@@ -9,7 +9,16 @@ outside scope. These development packages declare publication limitations.
 hashes match the supplied research brief. `dev` dependencies resolve to exact,
 byte-identical 0.1.0 archives in a private validator cache. Published canonicals,
 snapshots and differentials remain unchanged. Update changed checksums only after
-reviewing the upstream contract. Do not run `scripts/research.py` as routine setup.
+reviewing the upstream contract. Routine setup only consumes the reviewed lock.
+
+The validator additionally bootstraps `hl7.fhir.xver-extensions#0.1.0` and
+`hl7.terminology.r4#6.2.0`; these are locked too. Its unversioned automatic
+`hl7.terminology` / `hl7.fhir.uv.extensions` loads otherwise request moving
+packages online. The pinned validator's `IgLoader` supports local package files
+under these names. A private working directory supplies byte-identical R4
+6.5.0 / 5.2.0 archives for those lookups, with the resolution recorded in the
+lock. The validation report records and checks the actual loaded package set.
+No R5 core or later ICD-10 ValueSet is loaded into the target validator.
 
 Sources: [NEHR specification](https://ig.hiu.lk/fhir/nehr/specification.html),
 [Client Registry](https://ig.hiu.lk/fhir/clientregistry/artifacts.html), and
@@ -62,6 +71,23 @@ not interchangeable; the IG chooses neither and its GN extension has no binding.
 * LKEncounterSummary is a standalone Composition, not a document. Its optional
   obstetric targets and broad Observation section slicing need caution.
 * LKVitalSignsHemoglobin actually requires HbA1c LOINC 4548-4.
+
+An actual online validator probe on 2026-09-17 rejected ICD-10 `E11` at
+`Bundle.entry[1].resource/*Condition/icd10-binding-probe*/.code`: the code is not
+in `http://hl7.org/fhir/ValueSet/icd-10|4.0.1` and a member is required.
+See `evidence/condition-gate.json` for the exact diagnostic and definition hash.
+`evidence/icd-10-definitions.json` also retains the R5 definition inspected during
+bootstrap investigation; its presence there is explicitly not target resolution.
+
+The synthetic Synthea locality uses the upstream v4.0.0 CSV schemas. Population
+size, equal age bins, 50/50 sex weights, socioeconomic weights and screening
+glucose range are artificial settings, not census data or a treatment guideline.
+The schema's US race labels are engine input categories, not claims about Sri
+Lankan ethnicity. They are not exported. The payer files have headers only;
+the scenario does not model insurance. Provider coordinates describe the test
+locality and provider identities are synthetic. Source DOB, observation values,
+units and visit dates are retained. All clinical categories outside the selected
+screening graph are recorded as omitted; no diagnosis is needed by this module.
 
 ## Bounded Flexporter evaluation
 

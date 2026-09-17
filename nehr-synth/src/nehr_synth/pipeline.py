@@ -39,6 +39,10 @@ def write_resources(resources: list, directory: Path) -> list:
 def open_run(directory: Path) -> tuple[dict, list, Config]:
     directory = directory.resolve()
     manifest = read_json(directory / "manifest.json")
+    for name, expected in manifest["input_hashes"].items():
+        suffix = ".csv" if name == "geography" else ".json"
+        if digest(directory / "inputs" / (name + suffix)) != expected:
+            raise ValueError(f"Saved input changed: {name}")
     resources = []
     for entry in manifest["resources"]:
         path = (directory / entry["file"]).resolve()
@@ -54,6 +58,13 @@ def open_run(directory: Path) -> tuple[dict, list, Config]:
         resources.append(resource)
     if Counter(r["resourceType"] for r in resources) != manifest["counts"]:
         raise ValueError("Manifest/resource count mismatch")
+    patients = [r for r in resources if r["resourceType"] == "Patient"]
+    counts = {
+        kind: sum(i["system"] == system for p in patients for i in p["identifier"])
+        for kind, system in SYSTEMS.items()
+    }
+    if counts != manifest["identifier_counts"]:
+        raise ValueError("Manifest/identifier count mismatch")
     return (
         manifest,
         resources,
@@ -102,7 +113,8 @@ def generate(config: Config, progress=print, control: Control | None = None) -> 
         manifest["input_hashes"] = {}
         for name, path in inputs.items():
             manifest["input_hashes"][name] = digest(path)
-            shutil.copyfile(path, source_dir / path.name)
+            suffix = ".csv" if name == "geography" else ".json"
+            shutil.copyfile(path, source_dir / (name + suffix))
         control.check()
         if config.preset == "outpatient":
             from .synthea import outpatient

@@ -1,0 +1,51 @@
+{
+  "resourceType": "Patient",
+  "id": "329bd5ac-48ee-5ce1-8e58-18a490cab7ea",
+  "meta": {
+    "profile": [
+      "http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://fhir.health.gov.lk/ips/identifier/nic",
+      "value": "957980982945"
+    },
+    {
+      "system": "http://fhir.health.gov.lk/ips/identifier/phn",
+      "value": "TESTJFJKDV2"
+    },
+    {
+      "system": "http://fhir.health.gov.lk/identifier/passport",
+      "value": "TEST-P0000009"
+    }
+  ],
+  "name": [
+    {
+      "family": "Fernando",
+      "given": [
+        "Malini"
+      ],
+      "text": "Malini Fernando"
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1984-08-16",
+  "address": [
+    {
+      "line": [
+        "9 Synthetic Test Lane"
+      ],
+      "city": "Test DS Colombo",
+      "district": "Colombo",
+      "state": "Western",
+      "country": "LK",
+      "extension": [
+        {
+          "url": "http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/lk-gn-extension",
+          "valueCode": "TEST-GN-001"
+        }
+      ]
+    }
+  ]
+}

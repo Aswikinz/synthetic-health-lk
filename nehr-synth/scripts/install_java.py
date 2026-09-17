@@ -13,8 +13,11 @@ from nehr_synth.runtime import checked
 
 root = Path(__file__).resolve().parents[1]
 architecture = {"x86_64": "x64", "aarch64": "aarch64"}[platform.machine()]
-artifact = next(a for a in json.loads((root / "tool-lock.json").read_text())["artifacts"]
-                if a["name"] == f"java-{architecture}.tar.gz")
+artifact = next(
+    a
+    for a in json.loads((root / "tool-lock.json").read_text())["artifacts"]
+    if a["name"] == f"java-{architecture}.tar.gz"
+)
 with tempfile.TemporaryDirectory() as directory:
     path = Path(directory) / "java.tar.gz"
     with urllib.request.urlopen(artifact["url"], timeout=180) as response:

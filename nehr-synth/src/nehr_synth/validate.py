@@ -9,6 +9,7 @@ from pathlib import Path
 from .config import Config
 from .localize import GN, SYSTEMS, valid_phn
 from .runtime import (
+    Cancelled,
     Control,
     digest,
     java,
@@ -142,7 +143,7 @@ def outcome_issues(outcome: dict) -> list:
         ]
     if outcome.get("resourceType") != "OperationOutcome":
         raise ValueError("Validator did not return an OperationOutcome")
-    return [
+    issues = [
         {
             "layer": "ig",
             "severity": item["severity"],
@@ -153,6 +154,11 @@ def outcome_issues(outcome: dict) -> list:
         }
         for item in outcome.get("issue", [])
     ]
+    for issue in issues:
+        match = re.search(r"/\*([A-Za-z]+/[^*]+)\*/", issue["path"])
+        if match:
+            issue["resource"] = match[1]
+    return issues
 
 
 def validate_graph(
@@ -270,7 +276,7 @@ def validate_graph(
                     "message": f"Validator exit code {code}",
                 }
             )
-    except (ValueError, OSError, TimeoutError) as error:
+    except (Cancelled, ValueError, OSError, TimeoutError) as error:
         result["ig"] = "incomplete"
         issues.append(
             {

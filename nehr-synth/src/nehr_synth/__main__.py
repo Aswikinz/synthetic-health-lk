@@ -9,7 +9,7 @@ from pathlib import Path
 from .config import load
 from .mutate import CASES, mutate
 from .pipeline import EXIT_CODES, export_run, generate, revalidate
-from .runtime import Control, doctor, read_json, setup
+from .runtime import Cancelled, Control, doctor, read_json, setup
 
 
 def parser() -> argparse.ArgumentParser:
@@ -56,6 +56,7 @@ def main(argv=None) -> int:
         return 0
     control = Control()
     previous = signal.signal(signal.SIGINT, lambda *_: control.cancel())
+    previous_term = signal.signal(signal.SIGTERM, lambda *_: control.cancel())
     try:
         values = vars(args).copy()
         command = values.pop("command")
@@ -90,12 +91,18 @@ def main(argv=None) -> int:
         directory = mutate(args.run.resolve(), args.case, control)
         result = read_json(directory / "mutation.json")
         print(f"{result['result']}: {directory}")
+        if control.event.is_set():
+            return 2
         return 0 if result["result"] == "expected failure observed" else 1
+    except Cancelled as error:
+        print(str(error), file=sys.stderr)
+        return 2
     except (ValueError, OSError, KeyError) as error:
         print(f"Error: {error}", file=sys.stderr)
         return 3
     finally:
         signal.signal(signal.SIGINT, previous)
+        signal.signal(signal.SIGTERM, previous_term)
 
 
 if __name__ == "__main__":

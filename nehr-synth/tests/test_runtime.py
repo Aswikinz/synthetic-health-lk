@@ -44,6 +44,11 @@ def test_package_setup_integrity_and_dev_alias(config, monkeypatch, tmp_path):
     home = prepare_packages(config)
     assert (home / ".fhir/packages/fixture#dev/package/package.json").read_bytes() == content
     assert (destination / "bootstrap/fixture-alias").read_bytes() == archive.read_bytes()
+    cached = home / ".fhir/packages/fixture#dev/package/package.json"
+    cached.write_text("{}")
+    with pytest.raises(ValueError, match="changed"):
+        prepare_packages(config)
+    cached.write_bytes(content)
     archive.write_bytes(b"corrupt")
     with pytest.raises(ValueError, match="changed"):
         prepare_packages(config)
