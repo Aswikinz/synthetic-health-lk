@@ -30,7 +30,7 @@ POSIX shell, including a path containing spaces:
 mkdir -p "$PWD/synthetic output"
 docker run --rm -it --user "$(id -u):$(id -g)" \
   -v "$PWD/synthetic output:/data" nehr-synth:local
-podman run --rm -it --userns=keep-id \
+podman run --rm -it --userns=keep-id:uid=1000,gid=1000 --user=1000:1000 \
   -v "$PWD/synthetic output:/data:Z" nehr-synth:local
 ```
 
@@ -40,7 +40,7 @@ PowerShell:
 New-Item -ItemType Directory -Force 'synthetic output' | Out-Null
 $outDir = (Resolve-Path 'synthetic output').Path
 docker run --rm -it --mount "type=bind,source=$outDir,target=/data" nehr-synth:local
-podman run --rm -it --userns=keep-id -v "${outDir}:/data" nehr-synth:local
+podman run --rm -it --userns=keep-id:uid=1000,gid=1000 --user=1000:1000 -v "${outDir}:/data" nehr-synth:local
 ```
 
 The no-argument entrypoint opens the terminal app. Tab/Shift+Tab navigate fields;
@@ -56,7 +56,7 @@ Headless examples:
 ```sh
 docker run --rm -v "$PWD/synthetic output:/data" nehr-synth:local \
   generate --patients 10 --seed 42 --output /data/runs
-podman run --rm --userns=keep-id -v "$PWD/synthetic output:/data:Z" nehr-synth:local \
+podman run --rm --userns=keep-id:uid=1000,gid=1000 --user=1000:1000 -v "$PWD/synthetic output:/data:Z" nehr-synth:local \
   generate --patients 1 --preset outpatient --output /data/runs
 docker run --rm --network=none -v "$PWD/synthetic output:/data" nehr-synth:local \
   generate --patients 10 --terminology offline --output /data/offline
@@ -64,8 +64,8 @@ docker run --rm --network=none -v "$PWD/synthetic output:/data" nehr-synth:local
 
 Output survives container removal through `/data`. Default generated runs live
 under `/data/runs`. Use a unique output destination when re-exporting. No ports,
-privileged mode or Docker socket are needed. Rootless Podman uses `--userns=keep-id`
-to preserve file ownership; SELinux hosts may need the private `:Z` mount label
+privileged mode or Docker socket are needed. Rootless Podman uses `--userns=keep-id:uid=1000,gid=1000 --user=1000:1000`
+to map the host owner to the image user and preserve file ownership; SELinux hosts may need the private `:Z` mount label
 (or `:z` for intentionally shared mounts). Docker Linux users can pass their UID/GID.
 Writable validator caches default to `/tmp/nehr-cache`, independently of HOME.
 For reuse, mount a separate writable cache and set `NEHR_CACHE` to that mount.

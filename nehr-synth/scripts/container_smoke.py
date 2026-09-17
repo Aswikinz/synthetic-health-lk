@@ -16,7 +16,7 @@ output = Path("container-output") / engine / architecture / uuid4().hex[:8]
 output.mkdir(parents=True, exist_ok=True)
 command = [engine, "run", "--rm", "--platform", f"linux/{architecture}"]
 if engine == "podman":
-    command += ["--userns=keep-id"]
+    command += ["--userns=keep-id:uid=1000,gid=1000", "--user=1000:1000"]
 else:
     command += ["--user", f"{os.getuid()}:{os.getgid()}"]
 mount = ["-v", f"{output.resolve()}:/data"]
