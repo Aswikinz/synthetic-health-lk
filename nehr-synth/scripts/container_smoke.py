@@ -7,6 +7,7 @@ import select
 import signal
 import subprocess
 import sys
+import termios
 import time
 from pathlib import Path
 from uuid import uuid4
@@ -103,6 +104,7 @@ finally:
 
 # No arguments must open the application, accept a keyboard quit and restore the PTY.
 master, slave = pty.openpty()
+termios.tcsetwinsize(slave, (40, 100))
 process = subprocess.Popen(
     command + ["-it"] + mount + [image],
     stdin=slave,
@@ -117,7 +119,9 @@ try:
     while time.monotonic() < deadline and b"Receiver" not in captured:
         if select.select([master], [], [], 1)[0]:
             captured += os.read(master, 65536)
-    assert b"Receiver" in captured, "TUI failed to start"
+        if process.poll() is not None:
+            break
+    assert b"Receiver" in captured, f"TUI failed to start: {captured[-5000:].decode(errors='replace')}"
     os.write(master, b"\x11")  # Ctrl+Q
     deadline = time.monotonic() + 45
     while process.poll() is None and time.monotonic() < deadline:
