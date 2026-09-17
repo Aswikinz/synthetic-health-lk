@@ -1,0 +1,205 @@
+{
+  "application": "passed",
+  "ig": "failed",
+  "identifier_format": {
+    "phn": "passed",
+    "nic": "incomplete",
+    "passport": "synthetic convention"
+  },
+  "registry_validity": "not checked",
+  "terminology_mode": "online",
+  "terminology_endpoint": "https://tx.fhir.org/r4",
+  "server_version": "0.13.2",
+  "lookup_date": "2026-09-17T05:02:39.030161+00:00",
+  "issues": [
+    {
+      "layer": "ig",
+      "severity": "information",
+      "resource": "graph",
+      "path": "Bundle",
+      "message": "Validate resource against profile http://hl7.org/fhir/StructureDefinition/Bundle|4.0.1",
+      "code": "informational"
+    },
+    {
+      "layer": "ig",
+      "severity": "information",
+      "resource": "graph",
+      "path": "Bundle.entry[0].resource/*Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656*/",
+      "message": "Validate resource against profile http://hl7.org/fhir/StructureDefinition/Patient|4.0.1",
+      "code": "informational"
+    },
+    {
+      "layer": "ig",
+      "severity": "warning",
+      "resource": "graph",
+      "path": "Bundle.entry[0].resource/*Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656*/.identifier[0].system",
+      "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/nic'",
+      "code": "invalid"
+    },
+    {
+      "layer": "ig",
+      "severity": "warning",
+      "resource": "graph",
+      "path": "Bundle.entry[0].resource/*Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656*/.identifier[1].system",
+      "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/ips/identifier/phn'",
+      "code": "invalid"
+    },
+    {
+      "layer": "ig",
+      "severity": "warning",
+      "resource": "graph",
+      "path": "Bundle.entry[0].resource/*Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656*/.identifier[2].system",
+      "message": "No definition could be found for URL value 'http://fhir.health.gov.lk/identifier/passport'",
+      "code": "invalid"
+    },
+    {
+      "layer": "ig",
+      "severity": "warning",
+      "resource": "graph",
+      "path": "Bundle.entry[0].resource/*Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656*/",
+      "message": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
+      "code": "invariant"
+    },
+    {
+      "layer": "ig",
+      "severity": "information",
+      "resource": "graph",
+      "path": "Bundle.entry[0].resource/*Patient/cbbd89bf-cd44-541d-8449-7e8ec8b25656*/",
+      "message": "Validate resource against profile http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient|0.1.0 (per meta)",
+      "code": "informational"
+    },
+    {
+      "layer": "ig",
+      "severity": "information",
+      "resource": "graph",
+      "path": "Bundle.entry[1].resource/*Condition/icd10-binding-probe*/",
+      "message": "Validate resource against profile http://hl7.org/fhir/StructureDefinition/Condition|4.0.1",
+      "code": "informational"
+    },
+    {
+      "layer": "ig",
+      "severity": "warning",
+      "resource": "graph",
+      "path": "Bundle.entry[1].resource/*Condition/icd10-binding-probe*/",
+      "message": "Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)",
+      "code": "invariant"
+    },
+    {
+      "layer": "ig",
+      "severity": "information",
+      "resource": "graph",
+      "path": "Bundle.entry[1].resource/*Condition/icd10-binding-probe*/",
+      "message": "Validate resource against profile http://ig.hiu.lk/fhir/nehr/StructureDefinition/LKCondition|0.1.0 (per meta)",
+      "code": "informational"
+    },
+    {
+      "layer": "ig",
+      "severity": "error",
+      "resource": "graph",
+      "path": "Bundle.entry[1].resource/*Condition/icd10-binding-probe*/.code",
+      "message": "None of the codings provided are in the value set 'ICD-10 Codes' (http://hl7.org/fhir/ValueSet/icd-10|4.0.1), and a coding from this value set is required) (codes = http://hl7.org/fhir/sid/icd-10#E11)",
+      "code": "code-invalid"
+    }
+  ],
+  "package_summary": "Package Summary: [hl7.fhir.r4.core#4.0.1, hl7.fhir.xver-extensions#0.1.0, hl7.terminology.r4#6.2.0, hl7.fhir.uv.extensions.r4#5.2.0, hl7.terminology.r4#6.5.0, fhir.lk.clientregistry#0.1.0, fhir.lk.facilityregistry#0.1.0, fhir.lk.providerregistry#0.1.0, fhir.lk.nehr#0.1.0]",
+  "cache_provenance": {
+    "icd-10.cache": "adbdc74c6cc6aed222d6e038f2b6c1cebab2581e2f967961446052f22bc0af3f",
+    "loinc.cache": "af4612918aa03c55cfadc688e21a41cc55e97df2a3ab379517657aa5c9e147e2",
+    "ucum.cache": "a8f31f78271d81b93237e6650a771976befb134118a15c36fdfad7b407d64379",
+    "version.ctl": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+  },
+  "status": "failed",
+  "resolved_definition": {
+    "package": "hl7.fhir.r4.core",
+    "version": "4.0.1",
+    "file": "package/ValueSet-icd-10.json",
+    "sha256": "f603977569fbe0a53b5f628b48fefd74af9ea028a375da677d6aa9764fc35c98",
+    "definition": {
+      "resourceType": "ValueSet",
+      "id": "icd-10",
+      "meta": {
+        "lastUpdated": "2019-11-01T09:29:23.356+11:00",
+        "profile": [
+          "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+          "valueCode": "fm"
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+          "valueCode": "draft"
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+          "valueInteger": 1
+        }
+      ],
+      "url": "http://hl7.org/fhir/ValueSet/icd-10",
+      "identifier": [
+        {
+          "system": "urn:ietf:rfc:3986",
+          "value": "urn:oid:2.16.840.1.113883.4.642.3.531"
+        }
+      ],
+      "version": "4.0.1",
+      "name": "ICD-10Codes",
+      "title": "ICD-10 Codes",
+      "status": "draft",
+      "experimental": false,
+      "date": "2019-11-01T09:29:23+11:00",
+      "publisher": "Financial Management",
+      "contact": [
+        {
+          "telecom": [
+            {
+              "system": "url",
+              "value": "http://hl7.org/fhir"
+            }
+          ]
+        }
+      ],
+      "description": "This value set includes sample ICD-10 codes.",
+      "copyright": "This is an example set.",
+      "compose": {
+        "include": [
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10",
+            "concept": [
+              {
+                "code": "123456",
+                "display": "DIAG-1"
+              },
+              {
+                "code": "123457",
+                "display": "DIAG-1a"
+              },
+              {
+                "code": "987654",
+                "display": "DIAG-2"
+              },
+              {
+                "code": "123987",
+                "display": "DIAG-3"
+              },
+              {
+                "code": "112233",
+                "display": "DIAG-4"
+              },
+              {
+                "code": "997755",
+                "display": "DIAG-5"
+              },
+              {
+                "code": "321789",
+                "display": "DIAG-6"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "resourceType": "Patient",
+  "id": "93d1605d-82c7-595a-b51e-7bedfb6ae2c1",
+  "meta": {
+    "profile": [
+      "http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/LKPatient"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://fhir.health.gov.lk/ips/identifier/nic",
+      "value": "215012980862"
+    },
+    {
+      "system": "http://fhir.health.gov.lk/ips/identifier/phn",
+      "value": "TESTGWKQ4V0"
+    },
+    {
+      "system": "http://fhir.health.gov.lk/identifier/passport",
+      "value": "TEST-P0000006"
+    }
+  ],
+  "name": [
+    {
+      "family": "Perera",
+      "given": [
+        "Nimal",
+        "Sunil"
+      ],
+      "text": "Nimal Sunil Perera"
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1961-11-10",
+  "address": [
+    {
+      "line": [
+        "6 Synthetic Test Lane"
+      ],
+      "city": "Test DS Colombo",
+      "district": "Colombo",
+      "state": "Western",
+      "country": "LK",
+      "extension": [
+        {
+          "url": "http://ig.hiu.lk/fhir/clientregistry/StructureDefinition/lk-gn-extension",
+          "valueCode": "TEST-GN-001"
+        }
+      ]
+    }
+  ]
+}

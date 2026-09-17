@@ -1,0 +1,105 @@
+name: CI
+on:
+  pull_request:
+  push:
+    branches: [main, develop/nehr-synth]
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    permissions:
+      contents: read
+      id-token: write
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: nehr-synth
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: astral-sh/setup-uv@d0d8abe699bfb85fec6de9f7adb5ae17292296ff # v6
+        with:
+          version: '0.12.15'
+      - run: uv sync --frozen --python 3.12.14
+      - name: Lint and format
+        if: runner.os == 'Linux'
+        run: |
+          uv run ruff check .
+          uv run ruff format --check .
+      - run: uv run pytest -m "not integration" --cov --cov-report=xml --cov-report=term
+      - uses: codecov/codecov-action@04b047e8bb82a0c002c8312c1c880fbc6a999d45 # v5
+        if: runner.os == 'Linux'
+        with:
+          files: nehr-synth/coverage.xml
+          flags: unit
+          use_oidc: true
+          fail_ci_if_error: true
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: coverage-${{ runner.os }}
+          path: nehr-synth/coverage.xml
+
+  java:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: nehr-synth
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: astral-sh/setup-uv@d0d8abe699bfb85fec6de9f7adb5ae17292296ff
+        with:
+          version: '0.12.15'
+      - run: uv sync --frozen --python 3.12.14
+      - run: uv run python scripts/install_java.py .tools/java-runtime
+      - run: uv run nehr-synth setup
+      - name: Real offline and online validation; Synthea and negative variants
+        env:
+          NEHR_JAVA: ${{ github.workspace }}/nehr-synth/.tools/java-runtime/bin/java
+          NEHR_TEST_TOOLS: ${{ github.workspace }}/nehr-synth/.tools
+        run: uv run pytest -m integration --basetemp=integration-output -q
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: java-evidence
+          path: |
+            nehr-synth/integration-output/**/validation.*
+            nehr-synth/integration-output/**/validator*.json
+            nehr-synth/integration-output/**/validator.log
+            nehr-synth/integration-output/**/mutation.json
+            nehr-synth/integration-output/**/manifest.json
+
+  containers:
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: ${{ fromJSON(github.event_name == 'pull_request' && '["amd64"]' || '["amd64", "arm64"]') }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: docker/setup-qemu-action@c7c53464625b32c7a7e944ae62b3e17d2b600130
+      - uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f
+      - uses: docker/build-push-action@10e90e3645eae34f1e60eeb005ba3a3d33f178e8
+        with:
+          context: nehr-synth
+          platforms: linux/${{ matrix.platform }}
+          load: true
+          tags: nehr-synth:test
+      - name: Docker and rootless Podman runtime smoke tests
+        run: |
+          python nehr-synth/scripts/container_smoke.py docker nehr-synth:test '${{ matrix.platform }}'
+          docker save nehr-synth:test -o /tmp/nehr-image.tar
+          podman load -i /tmp/nehr-image.tar
+          python nehr-synth/scripts/container_smoke.py podman nehr-synth:test '${{ matrix.platform }}'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: container-evidence-${{ matrix.platform }}
+          path: container-output/**/validation.*

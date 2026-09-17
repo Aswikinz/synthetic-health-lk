@@ -1,0 +1,9 @@
+patients = 10
+seed = 42
+reference_date = "2026-01-01"
+terminology = "offline"
+output = "../../runs"
+tools = "../../.tools"
+ig_lock = "inputs/ig-lock.json"
+names = "inputs/names.json"
+geography = "inputs/geography.csv"

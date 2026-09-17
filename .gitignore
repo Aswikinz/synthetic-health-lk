@@ -1,0 +1,15 @@
+**/__pycache__/
+**/.pytest_cache/
+**/.ruff_cache/
+**/.venv/
+**/*.egg-info/
+**/.coverage*
+**/coverage.xml
+**/htmlcov/
+**/dist/
+**/build/
+nehr-synth/.tools/
+nehr-synth/runs/
+nehr-synth/.cache/
+container-output/
+nehr-synth/integration-output/
